@@ -273,3 +273,8 @@ read the problem carefully
 
 ## 49 - 10/29 - 11 - 530
 - the predecessor and the successor of the tree.
+
+## 50 - 10/29 - 12 - 496
+
+## 51 - 10/29 - 13 - 409
+palindrome

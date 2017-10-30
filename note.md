@@ -2,7 +2,7 @@
 ### if it can go into the loop
 - 数学归纳法<br/>
     * the first one must be right<br/>
-        + exits or not
+        + exists or not
         + right or not
 - the end value is right or not
 - the start value == end value?
@@ -193,20 +193,20 @@
 - 向左循环 (0, k - 1)(k, len - 1)(0, len - 1)
 
 
-    int k = k % nums.length;
-    reverse(nums, 0, nums.length - k - 1);
-    reverse(nums, nums.length - k, nums.length - 1);
-    reverse(nums, 0, nums.length - 1);
+        int k = k % nums.length;
+        reverse(nums, 0, nums.length - k - 1);
+        reverse(nums, nums.length - k, nums.length - 1);
+        reverse(nums, 0, nums.length - 1);
 
-    void reverse(int[] nums, int start, int end){
-        while(start < end){
-            int temp = nums[start];
-            nums[start] = nums[end];
-            nums[end] = temp;
-            start++;
-            end--;
+        void reverse(int[] nums, int start, int end){
+            while(start < end){
+                int temp = nums[start];
+                nums[start] = nums[end];
+                nums[end] = temp;
+                start++;
+                end--;
+            }
         }
-    }
 ## 10. remove duplicate or skip some elements
 - remove duplicate should use while loop
 
