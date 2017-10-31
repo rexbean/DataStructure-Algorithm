@@ -1,3 +1,19 @@
+## 1. int
+- the division of two int will be int. If we want to get double, we just make one of the number to be double.
+    + double a;
+
+            a/b
+
+    + type casting
+
+            (double)a / b
+## 1. double
+
+## 1. addition
+- when we do the addition continuously, we should pay attention to the sum which will be out of bound.
+    + Using long get the sum of the addition
+    + If it is for the average, then we can let the sum to be double directly.
+
 ## 1. loop
 ### if it can go into the loop
 - 数学归纳法<br/>
@@ -9,6 +25,7 @@
 - 如果递减 注意i-- 不是i++
 ### if it can not go into the loop
 - check the value will be returned
+- A loop which adds previous things to result and deals with the next one.(Start value of the loop may be 1).In this way the last one won't be added into the result. Add it outside the loop, this can also solve when the length == 1
 ### while loop
 - check the while loop whether write i++ or not
 - while loop's condition should be
@@ -38,6 +55,14 @@
 - ans = sum % 进制
 - carry = sum / 进制
 ## 5. Array
+- ### Arrays.sort()
+
+
+        Arrays.sort(intervals, new Comparator<Intervals>(){
+            public int compare(Interval v1, Interval v2){
+                return v1.start - v2.start;
+            }
+        });
 - ### perfixSum
 
 
@@ -74,6 +99,12 @@
                     result[i][j] = nums[rNums][cNums];
                 }
             }
+
+- ### intervals
+    + There are two variables, start and end. So we use sort to let one variable under control.
+    + Overlap
+
+            v1.start > v2.start && v2.start < v1.end
 ## 6. Binary Search
 - ### Find the first one
 - ### Find the last one
@@ -114,7 +145,10 @@
         }
         return root;
     }
-
+### Leaf
+- pay attention to deal with the leaves carefully.
+### Path
+- Path is a path from root to leaf! Pay attention to the leaf nodes. If one node have either leftChild or righChild. It is not a leaf!
 ### BFS
 #### 层次遍历
     Queue<TreeNode> queue = new LinkedList<TreeNode>();
@@ -137,7 +171,11 @@
     + return a value from bottom or generate a node
 - Top - down
     + add value each path
-
+    + parameters
+        + result
+        + subset
+        + content (nums or root)
+        + nums should also have startIndex
 - Mix
     + using top - down do the max / min
     + if using for edge, let null return -1;
