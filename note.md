@@ -35,7 +35,7 @@
 - pay attention to some variables should initialize each turn
 ## 2. convert
 - char to int
-    + (int)(char) - 48 oen digit
+    + (int)(char) - 48 one digit
 - int to char
     + (char)(int + 48)
 - char[] to String
@@ -225,6 +225,34 @@
             end++;
         }
     }
+- separate into two / three / several parts
+    + separate into two parts
+
+            while(right < nums.length){
+                if(nums[right] != <condition>){
+                    if(left != right){
+                        int temp = nums[right];
+                        nums[right] = nums[left];
+                        nums[left] = temp;
+                    }
+                    left++;
+                }
+                right++;
+            }
+    + separate into three parts
+
+            while(left < right){
+                if(nums[left] == <leftCondition>){
+                    swap(nums[left],nums[mid]);
+                    left++;
+                    mid++;
+                } else if(nums[left] == <midCondition>){
+                    left++;
+                } else {
+                    swap(nums[right],nums[left]);
+                    right--;
+                }
+            }
 ### fast and slow pointer
 ### 三步翻转法 （循环操作要想到）
 - 向右循环 (0, len - k - 1) (len - k, len - 1)(0, len - 1)

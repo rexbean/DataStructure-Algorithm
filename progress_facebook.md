@@ -44,3 +44,9 @@
 
 ## 6 - 56 - medium
 - A loop which adds previous things to result and deals with the next one.(Start value of the loop may be 1).In this way the last one won't be added into the result. Add it outside the loop, this can also solve when the length == 1
+
+## 7 - 76 - hard
+sliding window, firstly find all the elements meets the requirements, than move the left side to find all possibilities meet the reqirements.
+
+## 8 - 283 - easy
+when separate array into two parts with the original order. Do not use swap.just move!
