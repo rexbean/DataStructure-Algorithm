@@ -50,3 +50,11 @@ sliding window, firstly find all the elements meets the requirements, than move 
 
 ## 8 - 283 - easy
 when separate array into two parts with the original order. Do not use swap.just move!
+
+## 9 - 133 - medium
+- bfs of graph should have a set to judge whether the node has been visited.
+- clone means all the things should be new.
+- nodes do not mean only node, it has neighors.
+
+## 10 - 554 - medium
+prefixSum which appears the most times crosses the least bricks.

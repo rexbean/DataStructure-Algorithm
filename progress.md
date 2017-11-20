@@ -280,3 +280,68 @@ read the problem carefully
 palindrome
 
 ## 52 - 11/1 - 1 - 443
+
+## 53 - 11/17 - 1 - 19
+two pointer from one side and with the certain difference between them.
+
+## 54 - 11/17 - 2 - 22
+The question about subset
+when need to substract after the helper function
+The difference with String+= & String+
+
+## 55 - 11/17 - 3 - 11
+Two pointer
+volume = (right - left) * Math.min(nums[right],nums[left])
+The biggest value of right - left is the first one and the last one. It has the highest possiblity get the result. So using two pointers to hold the variable(right - left).
+- Think about how to deal with the duplicate. This just use one height so just move one ponter to remove the duplicate
+
+## 56 - 11/17 - 4 - 3
+This is a sliding window problem.Sliding window should be a separate topic.
+a wonderful summary of using sliding window in leetcode
+https://discuss.leetcode.com/topic/68976/sliding-window-algorithm-template-to-solve-all-the-leetcode-substring-search-problem
+
+https://medium.com/@dvng13/sliding-window-algorithm-377bebd7b57
+
+## 57 - 11/18 - 1 - 654
+divide and conquer
+
+## 58 - 11/18 - 2 - 643
+prefixSum with sliding window
+-  prefixSum should do something with sum we should use method like slidin window
+-  prefixSum should do something with times or whether appear or not using HashMap
+    + times of subarray equals k
+    + maximum subarray equals k
+## 59 - 11/18 - 3 - 697
+- 固定一端，另一端通过for循环进行变化，每次计算出当前的最大值 一次进行这样可以再O(n)完成操作
+- Using two maps instead of one map with a Array;
+## 60 - 11/19 - 1 - 581
+
+## 61 - 11/19 - 2 - 713
+- two pointer should have the condition left< right || left <= right
+
+## 62 - 11/19 - 3 - 209
+- two pointer sliding window
+
+## 63 - 11/19 - 4 - 152
+- the corner case of the product is Zero
+- Using prefixProduct like prefixSum
+## 64 - 11/19 - 5 - 523
+- the corner case of the remain is Zero
+- if a % c == b % c then (a - b) % c = 0
+- think about the 0
+
+## 65 - 11/19 - 6 - 153
+the last element is the important one.
+
+## 66 - 11/19 - 7 - 228
+
+## 67 - 11/19 - 8 - 258
+
+## 68 - 11/19 - 9 - 554
+prefixSum
+
+## 69 - 11/19 - 10 - 657
+
+## 70 - 11/19 - 11 - 728
+
+## 71 - 11/20 - 1 - 133
