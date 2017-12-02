@@ -58,3 +58,28 @@ when separate array into two parts with the original order. Do not use swap.just
 
 ## 10 - 554 - medium
 prefixSum which appears the most times crosses the least bricks.
+
+## 11 - 398 - medium
+Reservoir Sampling
+dynamic increasing data structure
+if(random.nextInt(++count) == 0){
+    choose the new one
+}
+
+## 12 - 286 - medium
+BFS from 0
+
+## 13 - 17 - medium
+letters should declare as data member;
+int index = digits.charAt(level) - '0';
+String s = letters[index];
+
+## 14 - 79 - medium
+when has the map,
+- inBound(row, column, x, y)
+- can walk many time ?
+- how many times will each cell walk?
+    - 1, change to other '0'
+    - many times
+        - visited Array
+        - change to other '0' then change back

@@ -64,6 +64,7 @@
             }
         });
 - ### perfixSum
+    + Seldomly saving all prefixSum into an array.
 
 
 
@@ -106,9 +107,37 @@
 
             v1.start > v2.start && v2.start < v1.end
 ## 6. Binary Search
+    int start = 0;
+    int end = nums.length - 1;
+    int mid = 0;
+    while(start + 1 < end){
+        mid = start + (end - start) / 2;
+        if(nums[mid] == target){
+            return mid;
+        } else if(nums[mid] < target){
+            start = mid;
+        } else {
+            end = mid;
+        }
+    }
 - ### Find the first one
-- ### Find the last one
 
+        if(nums[start] == target){
+            return start;
+        }
+        if(nums[end] == target){
+            return end;
+        }
+        return -1;
+- ### Find the last one
+        if(nums[end] == target){
+            return end;
+        }
+        if(nums[start] == target){
+            return start;
+        }
+        return -1;
+- Sqrt(x)
 
         while(start + 1 < end){
             int mid = start + (end - start) / 2;
@@ -120,6 +149,45 @@
                 end = mid;
             }
         }
+- rotated sorted Array
+    + find the minimum
+
+            int mid = 0;
+            while(start + 1 < end){
+                mid = start + (end - start) / 2;
+                if(nums[mid] < nums[mid - 1]){
+                    return mid;
+                } else {
+                    if(nums[mid] <= nums[nums.length - 1]){
+                        end = mid;
+                    } else {
+                        start mid;
+                    }
+                }
+            }
+            if(nums[end] < nums[start]){
+                return end;
+            }
+            return start;
+    + search in rotated sorted Array
+
+            int mid = 0;
+            while(start + 1 < end){
+                mid = start + (end - start) / 2;
+                if(nums[start] < nums[mid]){
+                    if(nums[start] <= target && target <= nums[mid]){
+                        end = mid;
+                    } else {
+                        start = mid;
+                    }
+                } else {
+                    if(nums[mid] <= target && target <= nums[end]){
+                        start = mid;
+                    } else {
+                        end = mid;
+                    }
+                }
+            }
 ## 7. linked List
 - while(current.next!= null)
 
@@ -127,7 +195,17 @@
         current.next ------> while(current != null)
         current.next.next ------> while(current.next!= null)
 - 做一步是一步 做一步调整一下指针
-- while using current.next.next what is the while condition?
+- construct a new linked lists
+
+
+    ListNode dummy = new ListNode(0);
+    ListNode head = dummy;
+
+    head.next = new ListNode(x);
+    head = head.next;
+
+    return dummy.next;
+     
 ## 8. Tree
 ### predecessor
     if(root.left!=null){
@@ -417,3 +495,64 @@
     + tag all coposite Numbers under n, the rest are primes
 
         - find all times of number from 2 to sqrt(n)
+
+## hamming distance
+- total hamming distance += number of 1s * number of 0s every digit
+
+
+    for(int i = 0; i < nums.length; i++){
+        for(int j = 31; j >=0 ; j--){
+            distance[j] += (nums[i] & 1);   // here could be nums[i] % 2
+            nums[i] >>= 1;    //here could be nums[i] /= 2;
+        }
+    }
+    for(int i = 0; i < 31; i++){
+        result += distance[i] * (nums.length - distance[i]);
+    }
+    return result;
+## merge two Intervals
+    if(i1.start <= i2.start){
+        if(i2.start <= i1.end){
+            int end = Math.max(i1.end, i2.end);
+            Interval i = new Interval(i1.start,end);
+        } else {
+            Interval i1;
+            Interval i2;
+        }
+    } else {
+        if(i1.start <= i2.end){
+            int end = Math.max(i1.end, i2.end);
+            Interval i = new Interval(i2.start, end);
+        } else {
+            Interval i2;
+            Interval i1;
+        }
+    }
+
+## merge two sorted arrays / lists / intervals
+    int i = 0;  // the pointer of first data structure;
+    int j = 0;  // the pointer of second data structure;
+    int k = 0;  // the pointer of the result data structure;
+    while(i < A.size() && j < B.size()){
+        if(A[i] < B[j]){
+            // add(A[i]);
+            // k++;
+            // i++;
+        } else {
+            // add(B[j]);
+            // k++;
+            // j++;
+        }
+    }
+    while(i != A.size()){
+        // add(A[i]);
+        // k++;
+        // i++;
+    }
+    while(j != B.size()){
+        // add(B[j]);
+        // k++;
+        // j++;
+    }
+
+## merge k sorted array / lists / Intervals

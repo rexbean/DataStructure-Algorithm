@@ -345,3 +345,78 @@ prefixSum
 ## 70 - 11/19 - 11 - 728
 
 ## 71 - 11/20 - 1 - 133
+
+## 72 - 11/20 - 2 - 382
+Reservoir sampling
+
+## 73 - 11/21 - 1 - 130
+BFS
+
+## 74 - 11/21 - 2 - 199
+BFS
+
+## 75 - 11/21 - 3 - 242
+Anagram using hashmap
+
+## 76 - 11/21 - 4 - 438
+sliding window
+
+## 77 - 11/22 - 5 - 49
+Anagram
+
+## 78 - 11/22 - 6 - 130
+BFS
+
+## 79 - 11/23 - 1 - 513
+
+## 80 - 11/23 - 2 - 417
+
+## 81 - 11/23 - 3 - 542
+
+## 82 - 11/23 - 4 - 515
+
+## 83 - 11/23 - 5 - 16
+like 3 sum
+
+## 84 - 11/23 - 6 - 18
+4 sum
+- if(i != 0 && nums[i] != nums[i - 1]) // remove duplicate 1
+- while(left < right && nums[left] != nums[left - 1])
+- while(left < right && nums[right] != nums[right +1])
+//remove duplicate 2
+
+## 86 - 11/23 - 7 - 61
+- rotated list is a cycle so it should compute the length at first and rotate length % length;
+- fast & slow pointer
+
+## 87 - 11/23 - 8 - 142
+fast and slow pointer
+
+## 88 - 11/24 - 1 - 463
+## 89 - 11/24 - 2 - 46
+permutation
+## 90 - 11/24 - 3 - 39
+subset
+## 91 - 11/24 - 4 - 40
+- remove duplicate: if(i != start && nums[i] == nums[i - 1]){
+continue;
+} // this can be only used when the array is sorted
+- every number using once:
+  helper(nums, i + 1, subset, result);
+## 92 - 11/24  - 5 - 77
+helper(nums, i + 1, subset, result); // not start + 1 here
+
+## 93 - 11/24 - 6 - 93
+- i < start + 3 // maximum size of each part
+- if(s.charAt(0) == '0'){
+    return s.equals("0");
+}
+- if(sublist.size() == 4){
+    if(start != s.length()){
+        return;
+    }
+}
+
+## 94 - 11/24 - 7 - 4
+- how to create a new linkedList
+- carry must set to 0 after using it;
