@@ -420,3 +420,11 @@ helper(nums, i + 1, subset, result); // not start + 1 here
 ## 94 - 11/24 - 7 - 4
 - how to create a new linkedList
 - carry must set to 0 after using it;
+
+## 95 - 12/13 - 1 - 482
+- maybe do the operation to string reverse will be a good result;
+## 96 - 12/13 - 2 - 346
+- sliding window may use queue to be a breakpoint
+
+## 97 - 12/13 - 3 - 298
+- finding max value in tree must use a datamember to store the maxvalue;

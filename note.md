@@ -205,7 +205,7 @@
     head = head.next;
 
     return dummy.next;
-     
+
 ## 8. Tree
 ### predecessor
     if(root.left!=null){
@@ -260,6 +260,18 @@
 
 ## 9. Graph
 ### subset
+- parameters: nums, start, subSet, result, (target)
+- end condition: if(target == 0), if(# of elements == require)
+- remove duplicate:
+    + if(i != start && nums[i] == nums[i - 1]){
+            continue;
+    }
+
+    + helper(nums, i + 1, subSet, result, (target));
+- sum to tareget: in helper should be target - subSum
+- for subset : subset.add(element) should in the first linked
+- for permutation: it uses a set to check whether a number has been used
+- DO NOT FORGET TO ADD RETURN IN THE END CONDITION
 
 
         private void helper(int num, int startIndex, ArrayList result, ArrayList subset){
@@ -555,4 +567,79 @@
         // j++;
     }
 
-## merge k sorted array / lists / Intervals
+## merge k sorted array / lists / Intervals(Using priorityQueue)
+    // corner case
+    Comparator<T> TComparator = new Comparator<T>(){
+        public int compare(T t1, T t2){
+            return t1 - t2;// t1.start - t2.start for Interval
+        }
+    };
+
+    ListNode dummy = new ListNode(0);
+    ListNode head = dummy;
+
+    //ArrayList<Interval> result = new ArrayList<>();
+    Queue<T> heap = new PriorityQueue<T>(A.size(), TComparator);
+    for(int i = 0 ;i < A.size(); i++){
+        if(A[i] != null){
+            heap.offer(A[i]);
+        }
+    }
+
+    //Interval last = heap.poll();
+    while(!heap.isEmpty()){
+        T t = heap.poll();
+        head.next = T;
+        head = head.next;
+        if(t.next != null){
+            heap.offer(t.next);
+        }
+        //Interval t = heap.poll();
+        // if(t.start <= last.end){
+        //     last.end = Math.max(last.end, t.end);
+        // } else {
+        //     result.add(last);
+        //     last = t;
+        //}
+    }
+    return dummy.next;
+## Sliding window
+- sliding window may use queue to be a break point
+- the condition that left pointer ++;
+    1. all letters existed and the times are correct
+        using one count to represent this.
+    2. Using map.get() == 1 to represent appearing, using map.get() == 0 represents not appearing
+    3. k distinct characters, count represents the number of distinct letters
+- template
+
+        // corner case
+        <!-- HashMap<Character, Integer> map = new HashMap<>();
+        for(Character c: s){
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        } -->
+
+        int left = 0;
+        int right = 0;
+        int count = 0;
+        int len = Integer.MAX_VALUE;
+
+        while(right < p.length()){
+            char c = p.charAt(right);
+            map.put(c, map.getOrDefault(c, 0) + 1);
+            if(map.get(c) == 1){
+                count++;
+            }
+            right++;
+
+            while(count > k){
+                char cTemp = p.charAt(left);
+                if(map.containsKey(cTemp)){
+                    map.put(cTemp, map.get(cTemp) - 1);
+                }
+                if(map.get(cTemp) == 0){
+                    count--;
+                }
+                left++;
+            }
+        }
+        len = Math.max(len, right - left);
