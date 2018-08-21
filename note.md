@@ -1,12 +1,23 @@
 ## 1. int
 - the division of two int will be int. If we want to get double, we just make one of the number to be double.
-    + double a;
-
-            a/b
-
+    + Using a double variable
+      ``` Java
+      double a;
+      a/b
+      ```
     + type casting
-
-            (double)a / b
+      ``` Java
+      (double)a / b
+      ```
+## 2. Integer
+- int is a primitive type, Integer is a class.
+- Method
+  - **Constructor**: new Integer(int) can instantiate a object of type Integer
+  - **Integer.parseInt(String)** will return a int with the value of String
+  - **Integer.valueOf(String)** will return a object of Integer, if the value is in the range of IntegerCache, it will return the same object, otherwise, it will return a new object.
+- Comparartion between int and Integer
+  - If one of the value is a int, it will be value comparation, just compare value
+  - If both are Integer, it will be object comparation. If the value of the String is in the range of IntegerCache it will be equal, otherwise it will be different.
 ## 1. double
 
 ## 1. addition
@@ -484,22 +495,37 @@
         }
 
 ## 18. Stack
-- push()
+- Java doesn't have the Interface of Stack. it just has a class named Stack(Java.util.Stack), it is extended by Vector. This implementation is synchronous ans slow. It will always be implemented by **ArrayDeque** or **LinkedList**
+- **Constructor**
+  ``` Java
+  Deque<> stack = new ArrayDeque<>();  // when it always insert or delete the head or tail
+  Deque<> stack = new LinkedList<>(); // when it always insert or delete the value in the middle
+  ```
+- **Method**
+  - *push()*
     it means add
-- pop()
+  - *pop()*
     it means remove
-- peek()
+  - *peek()*
     it means return the top
-- using for loop must get the size of stack first, in case it will be changed in the loop
+  - *equals()* It can directly compare all values of two stacks whether equal or not
+- **Caution**
+  - When using pop, it must be assured that the stack is not empty!
+  - using for loop must get the size of stack first, in case it will be changed in the loop
+- **Usage**
+  - **Using stack, when it will do nothing just push the value into the stack util a particular condition happens**
+    - **General**: Some characters are triggers
+    - **Monotone**: The value is not obey the monotone as before.
 
 ## 19. Queue
-- Queue<> queue = new LinkedList<>();
-- offer()
-    it means add
-- poll()
-    it means remove
-- peek()
-    it means get the top
+- **Constructor**
+  ```Java
+  Queue<> queue = new LinkedList<>();
+  ```
+- **Method**
+  - *offer()* It has the same functionality as *add()*. But *add()* will return **uncheck Exception** when the stack is full. *offer()* will return false
+  - *poll()* It has the same functionality as *remove()*. But *remove()* will throw exception when the stack is empty, *poll()* will return null
+  - *peek()* It has the same functionality as *element()*. But *element()* will throw exception when the queue is empty, *peek()* will return null
 - using for or while loop should get the size of stack first, in case it will be changed in the loop
 
 ## 20. Prime
@@ -604,6 +630,7 @@
     }
     return dummy.next;
 ## Sliding window
+- sliding window template: https://leetcode.com/problems/find-all-anagrams-in-a-string/discuss/92007/sliding-window-algorithm-template-to-solve-all-the-leetcode-substring-search-problem
 - sliding window may use queue to be a break point
 - the condition that left pointer ++;
     1. all letters existed and the times are correct
