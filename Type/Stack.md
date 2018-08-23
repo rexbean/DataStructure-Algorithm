@@ -1,13 +1,17 @@
 # Stack
-| #   | # problem | Status    | Type                 | Note                                         |
-| --- | --------- | --------- | -------------------- | -------------------------------------------- |
-| 1   | 682       | Completed | General              | note.Integer                                 |
-| 2   | 496       | Completed | Monotone Stack       | hashmap or array                             |
-| 3   | 844       | Completed | General, Two Pointer | StringBuilder, StringBuffer                  |
-| 4   | 232       | Completed | General              | !!Important                                  |
+| #   | # problem | Status    | Type                 | Note                                                           |
+| --- | --------- | --------- | -------------------- | -------------------------------------------------------------- |
+| 1   | 682       | Completed | General              | note.Integer                                                   |
+| 2   | 496       | Completed | Monotone Stack       | hashmap or array                                               |
+| 3   | 844       | Completed | General, Two Pointer | StringBuilder, StringBuffer                                    |
+| 4   | 232       | Completed | General              | !!Important                                                    |
 | 5   | 20        | Completed | General              | if(stack.isEmpty()  \|\| stack.pop() != '[') **return false**; |
-|     |           |           |                      |                                              |
-|     |           |           |                      |                                              |
+| 6   | 439       | Completed | General              | Find out the static things                                     |
+| 7   | 739       | Completed | Monotone Stack       |                                                                |
+| 8   | 856       | Completed | General              | '(' can use 0 to represented which will not affect the sum     |
+| 9   | 503       | Completed | Monotone Stack       | % can use to do the circular stuff                             |
+| 10  | 636       | Completed | General              | Read Carefully and draw a timeline                             |
+|     |           |           |                      |                                                                |
 
 
 
