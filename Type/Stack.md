@@ -1,19 +1,21 @@
 # Stack
-| #   | # problem | Status    | Type                 | Note                                                           |
-| --- | --------- | --------- | -------------------- | -------------------------------------------------------------- |
-| 1   | 682       | Completed | General              | note.Integer                                                   |
-| 2   | 496       | Completed | Monotone Stack       | hashmap or array                                               |
-| 3   | 844       | Completed | General, Two Pointer | StringBuilder, StringBuffer                                    |
-| 4   | 232       | Completed | General              | !!Important                                                    |
-| 5   | 20        | Completed | General              | if(stack.isEmpty()  \|\| stack.pop() != '[') **return false**; |
-| 6   | 439       | Completed | General              | Find out the static things                                     |
-| 7   | 739       | Completed | Monotone Stack       |                                                                |
-| 8   | 856       | Completed | General              | '(' can use 0 to represented which will not affect the sum     |
-| 9   | 503       | Completed | Monotone Stack       | % can use to do the circular stuff                             |
-| 10  | 636       | Completed | General              | Read Carefully and draw a timeline                             |
-| 11  | 394       | Completed | General              | String can append char using += directly                       |
-| 12  | 735       | Completed | General              | When convert stack to array, pay attention to the order!       |
-| 13  | 150       | Completed | General              | Thing out the type in the stack first!                         |
+| #   | # problem | Status    | Type                 | Note                                                            |
+| --- | --------- | --------- | -------------------- | --------------------------------------------------------------- |
+| 1   | 682       | Completed | General              | note.Integer                                                    |
+| 2   | 496       | Completed | Monotone Stack       | hashmap or array                                                |
+| 3   | 844       | Completed | General, Two Pointer | StringBuilder, StringBuffer                                     |
+| 4   | 232       | Completed | General              | !!Important                                                     |
+| 5   | 20        | Completed | General              | if(stack.isEmpty()  \|\| stack.pop() != '[') **return false**;  |
+| 6   | 439       | Completed | General              | Find out the static things                                      |
+| 7   | 739       | Completed | Monotone Stack       |                                                                 |
+| 8   | 856       | Completed | General              | '(' can use 0 to represented which will not affect the sum      |
+| 9   | 503       | Completed | Monotone Stack       | % can use to do the circular stuff                              |
+| 10  | 636       | Completed | General              | Read Carefully and draw a timeline                              |
+| 11  | 394       | Completed | General              | String can append char using += directly                        |
+| 12  | 735       | Completed | General              | When convert stack to array, pay attention to the order!        |
+| 13  | 150       | Completed | General              | Think out the type in the stack first!                          |
+| 14  | 84        | Completed | Monotone Stack       | Area = height * width <br> Area = stack.pop() * (i - isEmpty()?-1: stack.peek())<br>1. End is another trigger!! <br>2. corner case, isEmpty(), size == 1 |
+|     |           |           |                      |                                                                 |
 
 
 
