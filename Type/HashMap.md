@@ -11,7 +11,7 @@
 | 9   | 575          | Completed  | K-V(kinds)     | Using the number of keys                                                                                                                                 |
 | 10  | 288          | Completed  | K-V(word)      | if two words in dict have same abb then<br> it is invalid                                                                                                |
 | 11  | 36           | To be Done | K-V(exists)    | trade off with hashSet                                                                                                                                   |
-| 12  | 347          | To be Done | K-V(times)     | HashMap for times, Heap for k freqent.<br>Another solution is Bucket Sort<br>https://www.programcreek.com/2014/05/leetcode-top-k-frequent-elements-java/ |
+| 12  | 347          | To be Done | K-V(times)     | HashMap for times, Heap for k freqent.<br>Another solution is Bucket Sort<br>https://www.programcreek.com/<br>2014/05/leetcode-top-k-frequent-elements-java/ |
 | 13  | 136          | Completed  | K-V(times)     | Haven't use times, set is better.<br> bit operation(^) is best                                                                                           |
 |     |              |            |                |                                                                                                                                                          |
 |     |              |            |                |                                                                                                                                                          |
