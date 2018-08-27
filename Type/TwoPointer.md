@@ -1,7 +1,7 @@
 | #   | # of Prob | Status    | Type                       | Note               |
 | --- | --------- | --------- | -------------------------- | ------------------ |
 | 1   | 26        | Completed | Moving elements(duplicate) |                    |
-| 2   | 80        | Completed | Moving elements(duplicate) | formula for moving |
+| 2   | 80        | Completed | Moving elements(duplicate) | formula for removing duplicate|
 |     |           |           |                            |                    |
 
 
