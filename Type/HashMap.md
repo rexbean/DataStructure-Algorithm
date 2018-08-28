@@ -15,7 +15,7 @@
 | 13  | 136          | Completed  | K-V(times)      | Haven't use times, set is better.<br> **bit operation(^)** is best for find the different number                                                             |
 | 14  | 1            | Completed  | K-V(position)   | **Two Sum**                                                                                                                                                  |
 | 15  | 3            | To be Done | Sliding Window |                                                                                                                                                              |
-| 16  | 76           | To be Done | Sliding Window |                                                                                                                                                              |
+| 16  | 76           | To be Done | Sliding Window | Some <E>s contains in other container:<br> 1. put <E>s and times into a hash map.<br> 2. Count = map.size()<br> 3. if an <E> in the map then map.get(<E>)- 1;<br> 4.if map.get<E> == 0, count--;<br> which means <E> is in and has been used out.<br> 5. left++; if [left] in is the map, map.put([left], map.get([left]) + 1);<br> 6. if map.get([left] > 0) count++;                                                                                                                                                               |
 
 
 # 76 Minimum Window Substring
