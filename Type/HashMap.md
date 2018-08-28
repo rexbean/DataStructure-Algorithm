@@ -15,4 +15,56 @@
 | 13  | 136          | Completed  | K-V(times)      | Haven't use times, set is better.<br> **bit operation(^)** is best for find the different number                                                             |
 | 14  | 1            | Completed  | K-V(position)   | **Two Sum**                                                                                                                                                  |
 | 15  | 3            | To be Done | Sliding Window |                                                                                                                                                              |
-|     |              |            |                 |                                                                                                                                                              |
+| 16  | 76           | To be Done | Sliding Window |                                                                                                                                                              |
+
+
+# 76 Minimum Window Substring
+```Java
+class Solution {
+    public String minWindow(String s, String t) {
+        if(s == null || s.length() == 0 || t == null || t.length() == 0){
+            return "";
+        }
+        
+        HashMap<Character, Integer> map = new HashMap<>();
+        
+        for(char c: t.toCharArray()){
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        }
+        
+        int left = 0;
+        int right = 0;
+        int count = map.size();
+        int len = 0;
+        int index = 0;
+        while(right < s.length()){
+            char c = s.charAt(right);
+
+            if(map.containsKey(c)){
+                map.put(c, map.get(c) - 1);
+                if(map.get(c) == 0){
+                    count--;
+                }
+            }
+            right++;
+            
+            while(count == 0){
+                char temp = s.charAt(left);
+                if(map.containsKey(temp)){
+                    map.put(temp, map.get(temp) + 1);
+                    if(map.get(temp) > 0){
+                        count++;
+                    }
+                }
+                if(len == 0 || len > right - left){
+                    len = right - left;
+                    index = left;
+                }
+                left++;
+            }
+        }
+        return s.substring(index, index + len);
+    }
+}
+
+```
