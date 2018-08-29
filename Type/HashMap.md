@@ -17,9 +17,10 @@
 | 15  | 3            | Completed | Sliding Window | **No duplicate Elements in window**<br> 1. Using 1 to represent in, using 0 to represent not in.                                                                                                                                                              |
 | 16  | 76           | Completed | Sliding Window | Find a window where a container contains all elements of other container:<br> 1. put all elements and times into a hash map.<br> 2. left = 0, right = 0, count = map.size()<br> 3. if an [right] in the map then map.get([right])- 1;<br> 4. if map.get([right]) == 0, count--;<br> which means the element [right] has been used out.<br> 5. right++; 6. while(count == 0) <br>which means, when all elements are in the window<br> 6. if [left] in is the map, map.put([left], map.get([left]) + 1);<br> 7. if map.get([left] > 0) count++;<br> The number of elements in or out each time will be **1**<br>which means the maximum value is **1**<br>So when the map.get([left] > 0), count can be increased<br> 8. do something with len<br> be careful when len==0 which means it is the first one.                                                                                                                                                                |
 | 17 | 30| To be Done| Sliding Window||
-| 18 | 340| To be Done| Sliding Window||
-| 19 | 159| To be Done | Sliding Window||
-| 20 | 568| To be Done | Sliding Window||
+| 18 | 340| To be Done| Sliding Window|the same idea with 159|
+| 19 | 159| Completed | Sliding Window|1. if it is a string, using an array with length of 256<br>2. left increasing condition: count > 2<br> 3. count increasing condition: array[[right]] == 1|
+| 20 | 567| To be Done | Sliding Window||
+| 21 | 438| To be Done | Sliding Window||
 
 
 # 76 Minimum Window Substring
