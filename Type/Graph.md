@@ -1,9 +1,10 @@
 # Graph
-| #   | # of Prob | Status    | Type             | note |
-| --- | --------- | --------- | ---------------- | ---- |
-| 1   | 207       | Completed | Topological sort |      |
-| 2   | 210       | Completed | Topological sort |      |
-| 3   | 310       | Completed | Onion                 |      |
+| #   | # of Prob | Status     | Type             | note |
+| --- | --------- | ---------- | ---------------- | ---- |
+| 1   | 207       | Completed  | Topological Sort |      |
+| 2   | 210       | Completed  | Topological Sort |      |
+| 3   | 310       | Completed  | Onion            |      |
+| 4   | 444       | To be Done | Topological Sort | judge whether a graph's nodes are in the order of other sequence     |
 ## Node
 ``` Java
 class Node{
