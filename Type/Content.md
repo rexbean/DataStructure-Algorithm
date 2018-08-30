@@ -1,5 +1,5 @@
 # Content
-- [Graph](https://github.com/rexbean/L/blob/master/Graph/Graph.md)
+- [Graph](https://github.com/rexbean/L/blob/master/Type/Graph/Graph.md)
   - BFS
   - DFS
 - [Topological Sort](https://github.com/rexbean/L/blob/master/Type/Graph/TopologicalSort.md)
