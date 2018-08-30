@@ -96,9 +96,10 @@
   - Find too expensive (could be N steps)
   - Need to do find to do union
  
- | algorithm | union | find|
- | quick Find|  N | 1|
- | quick union| N* | N|
+    | algorithm | union | find |
+    |-----------|-------|------|
+    | quick Find |  N | 1 |
+    | quick union | N* | N |
   
 ## Path Compression
 ## Quick Union With Path Compression
