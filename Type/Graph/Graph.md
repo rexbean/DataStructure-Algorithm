@@ -1,10 +1,17 @@
 # Graph
-| #   | # of Prob | Status     | Type             | note |
-| --- | --------- | ---------- | ---------------- | ---- |
-| 1   | 207       | Completed  | Topological Sort |      |
-| 2   | 210       | Completed  | Topological Sort |      |
-| 3   | 310       | Completed  | Onion            |      |
-| 4   | 444       | To be Done | Topological Sort | judge whether a graph's nodes are in the order of other sequence     |
+
+- [Topological Sort](https://github.com/rexbean/L/blob/master/Type/TopologicalSort.md)
+- [UnionFind](http://github.com/rexbean/L/blob/master/Type/UnionFind.md)
+
+| #   | # of Prob | Status    | Type  | note |
+| --- | --------- | --------- | ----- | ---- |
+| 1   | 310       | Completed | Onion |      |
+|     |           |           |       |      |
+
+
+
+
+
 ## Node
 ``` Java
 class Node{
