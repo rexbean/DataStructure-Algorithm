@@ -1,23 +1,10 @@
 # Graph
-<<<<<<< HEAD
 | #   | # of Prob | Status     | Type             | note |
 | --- | --------- | ---------- | ---------------- | ---- |
 | 1   | 207       | Completed  | Topological Sort |      |
 | 2   | 210       | Completed  | Topological Sort |      |
 | 3   | 310       | Completed  | Onion            |      |
 | 4   | 444       | To be Done | Topological Sort | judge whether a graph's nodes are in the order of other sequence     |
-=======
-| #   | # of Prob | Status    | Type             | note |
-| --- | --------- | --------- | ---------------- | ---- |
-| 1   | 207       | Completed | Topological sort |      |
-| 2   | 210       | Completed | Topological sort |      |
-| 3   | 310       | Completed | Onion                 |      |
-
-
-- [Union Find](https://github.com/rexbean/L/blob/master/Type/UnionFind.md)
-
-
->>>>>>> a38c700e96690a25da311ebe1fdc4b298ea7c303
 ## Node
 ``` Java
 class Node{
