@@ -4,6 +4,8 @@
 - [Quick Union](#quickUnion)
 - [Weighted Quick Union](#WQU)
 - [Path Compression](#pathCompression)
+- [Quick Union With Path Compression](#WQUPC)
+- [Analysis](#analysisOfAll)
 ## <h2 id = "quickFind">Quick Find</h2>
 - Data structure.
   - Integer array id[] of size N.
