@@ -102,6 +102,7 @@
     |-----------|-------|------|
     | quick Find |  N | 1 |
     | quick union | N* | N |
+    
     \* includes of the cost of find
 ## Improvement
 ### <h3 id = "WQU">Weighted Quick Union<h3>
@@ -157,6 +158,7 @@
   |Quick Find | N| 1|
   |Quick Union| N*| N|
   |WQU| lgN*|LgN|   
+  
   \* includes of the cost of find
 ## <h2 id ="pathCompression">Path Compression<h2>
 ## Quick Union With Path Compression
