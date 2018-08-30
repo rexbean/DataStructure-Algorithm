@@ -87,5 +87,18 @@
       }
   }
   ```
+## Analysis
+- Quick-find defect.
+  - Union too expensive (N steps).
+  - Trees are flat, but too expensive to keep them flat.
+- Quick-union defect.
+  - Trees can get tall.
+  - Find too expensive (could be N steps)
+  - Need to do find to do union
+ 
+ | algorithm | union | find|
+ | quick Find|  N | 1|
+ | quick union| N* | N|
+  
 ## Path Compression
 ## Quick Union With Path Compression
