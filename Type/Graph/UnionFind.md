@@ -1,6 +1,7 @@
 # Union Find
 - [Union Find Slide from Princeton](https://www.cs.princeton.edu/~rs/AlgsDS07/01UnionFind.pdf)
-## Quick Find
+- [Quick Find](#quickFind)
+## <h2 id = "quickFind">Quick Find</h2>
 - Data structure.
   - Integer array id[] of size N.
   - Interpretation: p and q are connected if they have the same id.
