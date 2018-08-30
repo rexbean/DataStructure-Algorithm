@@ -287,38 +287,9 @@ private void DFSHelper(Integer i, boolean[] visited){
 }
 ```
 
-## Topological Sort
-- It's better to use BFS to do the topological sort
-``` Java
-// Compute the in-degree of all nodes
-int[] inDegree = new int[graph.size()];
-for(Integer i: graph.keySet()){
-    inDegree[i]++;
-}
 
-
-// Find the node whose in-degree is 0
-Queue<Integer> queue = new LinkedList<>();
-for(int i = 0; i < inDegree.length; i++){
-    if(inDegree[i] == 0){
-        queue.offer(i);
-    }
-}
-
-// Use BFS to traverse nodes to do the topological sort
-while(!queue.isEmpty()){
-    Integer v = queue.poll();
-    System.out.println(v + "->");
-    for(Integer neighbour: graph.get(v)){
-        inDegree[neighbour]--;
-        if(inDegree[neighbour] == 0){
-            queue.offer(neighbour);
-        }
-    }
-}
-```
-
-## UnionFind
+## [Topological Sort](https://github.com/rexbean/L/master/Type/Graph/TopologicalSort.md)
+## [UnionFind](https://github.com/rexbean/L/master/Type/Graph/UnionFind.md)
 
 ## Find a Ring
 
