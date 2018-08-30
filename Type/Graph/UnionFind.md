@@ -116,7 +116,7 @@
     - update the sz[] array.
 - Implementation
   ``` Java
-  public class QuickUnion{
+  public class WQU{
       private int[] id;
       private int[] sz;
       public QuickUnion(int N){
@@ -160,5 +160,65 @@
   |WQU| lgN*|LgN|   
   
   \* includes of the cost of find
-## <h2 id ="pathCompression">Path Compression<h2>
-## Quick Union With Path Compression
+### <h3 id ="pathCompression">Path Compression</h3>
+- Just after computing the root of i, set the id of each examined node to root(i).
+- Implementation
+  - Standard implementation: add second loop to root() to set the id of each examined node to the root.
+  - Simpler one-pass variant: make every other node in path point to its grandparent.
+- Implementation
+  ``` Java
+  public int root(int i){
+      while (i != id[i]){
+          id[i] = id[id[i]];
+          i = id[i];
+      }
+      return i;
+  }
+  ```
+### <h3 id= "WQUPC">Quick Union With Path Compression</h3>
+- Theorem: 
+  - Starting from an empty data structure, any sequence of M union and find operations on N objects takes O(N + M lg* N) time.
+  - In theory, WQUPC is not quite linear. In practice, WQUPC is linear. Because lgN is a constant in the universe
+- Implementation
+  ``` Java
+    public class WQUPC{
+      private int[] id;
+      private int[] sz;
+      public QuickUnion(int N){
+          id = new int[N];
+          sz = new int[N];
+          for (int i = 0; i < N; i++){
+              id[i] = i;
+          }
+      }
+      public int root(int i){
+          while (i != id[i]){
+              id[i] = id[id[i]];
+              i = id[i];
+          }
+          return i;
+      }
+      public boolean find(int p, int q){
+          return root(p) == root(q);
+      }
+      public void unite(int p, int q){
+          int i = root(p);
+          int j = root(q);
+          if(sz[i] < sz[j]){
+              id[i] = j;
+              sz[j] += sz[i];
+          } else {
+              id[j] = i; 
+              sz[i] += sz[j];
+          }
+      }
+  }
+  ```
+## <h2 id ="analysisOfAll">Analysis</h2>
+| Algorithm | Worst Case Time |
+| ----------|-----------------|
+| Quick Find|M*N|
+| Quick Union| M*N|
+| WQU |N + M log N|
+|Path compression| N + M log N|
+|WQUPC| (M + N) lg* N|
