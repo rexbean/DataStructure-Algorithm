@@ -1,5 +1,10 @@
 # Graph
-
+- [Node](#node)
+- [Edge](#edge)
+- [Build Graph](#buildGraph)
+- [BFS](#bfs)
+- [DFS](#dfs)
+- [DFS with Stack](#dfs/wStack)
 - [Topological Sort](https://github.com/rexbean/L/blob/master/Type/Graph/TopologicalSort.md)
 - [UnionFind](http://github.com/rexbean/L/blob/master/Type/Graph/UnionFind.md)
 
@@ -12,7 +17,7 @@
 
 
 
-## Node
+## <h2 id = "node">Node</h2>
 ``` Java
 class Node{
     int index;                    // The index of the node
@@ -23,7 +28,7 @@ class Node{
     }
 }
 ```
-## Edge
+## <h2 id = "edge">Edge</h2>
 - There are two ways to represent edges. One is **Adjacency Matrix**, the other is **Adjacency List**.
 ### Adjacency Matrix
 - It is a two dimensional array with '1's and '0's. '1' for an edge, '0' for disconnection.
@@ -53,7 +58,7 @@ class Node{
   E -> B<br>
   F -> B -> C<br>
 
-## Build Graph
+## <h2 id ="buildGraph">Build Graph</h2>
 - Graph can be build from an array of Edges, Adjacency Matrix, Adjacency List to HashMap<Integer, HashSet<Integer>>
 - Graph can be also built to ArrayList[];
 ### Build to a HashMap<Integer, HashSet<Integer>>
@@ -145,7 +150,7 @@ public ArrayList[] buildGraph(int n){
 }
 ```
 ## Traversal
-### BFS(Breadth-First Search)
+### <h3 id = "bfs">BFS(Breadth-First Search)</h3>
 #### Using Queue
 ```Java
 HashMap<Integer, HashSet<Integer>> graph = buildGraph(n, edges);
@@ -190,7 +195,7 @@ private void BFSHelper(int index, boolean[] visited){
 ```
 
 
-### DFS(Depth First Search)
+### <h3 id = "dfs">DFS(Depth First Search)</h3>
 
 #### Using Recursion
 ``` Java
@@ -234,7 +239,7 @@ void DFSHelper(int index, boolean[] visited){
 }
 ```
 
-#### Using Stack
+#### <h4 id = "dfs/wStack">Using Stack</h4>
 ``` Java
 HashMap<Integer, HashSet<Integer>> graph = buildGraph(n, edges);
 /**
