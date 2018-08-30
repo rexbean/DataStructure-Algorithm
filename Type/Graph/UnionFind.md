@@ -224,3 +224,6 @@
 | WQU |N + M log N|
 |Path compression| N + M log N|
 |WQUPC| (M + N) lg* N|
+
+M: How many unions before
+N: How many elements
