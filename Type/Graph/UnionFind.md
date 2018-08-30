@@ -1,6 +1,7 @@
 # Union Find
 - [Union Find Slide from Princeton](https://www.cs.princeton.edu/~rs/AlgsDS07/01UnionFind.pdf)
 - [Quick Find](#quickFind)
+- [Quick Union](#quickUnion)
 ## <h2 id = "quickFind">Quick Find</h2>
 - Data structure.
   - Integer array id[] of size N.
@@ -42,7 +43,7 @@
       }
   }
   ```
-## Quick Union
+## <h2 id ="quickUnion">Quick Union</h2>
 - Data structure.
   - Integer array id[] of size N.
   - Interpretation: id[i] is parent of i, and root of i is id[id[id[...id[i]...]]].
