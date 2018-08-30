@@ -2,6 +2,8 @@
 - [Union Find Slide from Princeton](https://www.cs.princeton.edu/~rs/AlgsDS07/01UnionFind.pdf)
 - [Quick Find](#quickFind)
 - [Quick Union](#quickUnion)
+- [Weighted Quick Union](#WQU)
+- [Path Compression](#pathCompression)
 ## <h2 id = "quickFind">Quick Find</h2>
 - Data structure.
   - Integer array id[] of size N.
@@ -100,8 +102,9 @@
     |-----------|-------|------|
     | quick Find |  N | 1 |
     | quick union | N* | N |
+    * includes of the cost of find
 ## Improvement
-### Weighted Quick Union
+### <h3 id = "WQU">Weighted Quick Union<h3>
 - Modify quick-union to avoid tall trees.
 - Keep track of size of each component.
 - Balance by linking small tree below large one.
@@ -113,34 +116,47 @@
 - Implementation
   ``` Java
   public class QuickUnion{
-    private int[] id;
-    public QuickUnion(int N){
-        id = new int[N];
-        for (int i = 0; i < N; i++){
-            id[i] = i;
-        }
-    }
-    private int root(int i){
-        while (i != id[i]){
-            i = id[i];
-        }
-        return i;
-    }
-    public boolean find(int p, int q){
-        return root(p) == root(q);
-    }
-    public void unite(int p, int q){
-        int i = root(p);
-        int j = root(q);
-        if(sz[i] < sz[j]){
-            id[i] = j;
-            sz[j] += sz[i];
-        } else {
-            id[j] = i; 
-            sz[i] += sz[j];
-        }
-    }
-}
+      private int[] id;
+      private int[] sz;
+      public QuickUnion(int N){
+          id = new int[N];
+          sz = new int[N];
+          for (int i = 0; i < N; i++){
+              id[i] = i;
+          }
+      }
+      private int root(int i){
+          while (i != id[i]){
+              i = id[i];
+          }
+          return i;
+      }
+      public boolean find(int p, int q){
+          return root(p) == root(q);
+      }
+      public void unite(int p, int q){
+          int i = root(p);
+          int j = root(q);
+          if(sz[i] < sz[j]){
+              id[i] = j;
+              sz[j] += sz[i];
+          } else {
+              id[j] = i; 
+              sz[i] += sz[j];
+          }
+      }
+  }
   ```
-## Path Compression
+- Analysis
+  - Find: takes time proportional to depth of p and q.
+  - Union: takes constant time, given roots.
+  - Fact: depth is at most lg N. 
+  
+  | Algorithm | Union | Find |
+  |-----------| ------| -----|
+  |Quick Find | N| 1|
+  |Quick Union| N*| N|
+  |WQU| lgN*|LgN|   
+  * includes of the cost of find
+## <h2 id ="pathCompression">Path Compression<h2>
 ## Quick Union With Path Compression
