@@ -1,7 +1,7 @@
 # Graph
 
-- [Topological Sort](https://github.com/rexbean/L/blob/master/Type/TopologicalSort.md)
-- [UnionFind](http://github.com/rexbean/L/blob/master/Type/UnionFind.md)
+- [Topological Sort](https://github.com/rexbean/L/blob/master/Type/Graph/TopologicalSort.md)
+- [UnionFind](http://github.com/rexbean/L/blob/master/Type/Graph/UnionFind.md)
 
 | #   | # of Prob | Status    | Type  | note |
 | --- | --------- | --------- | ----- | ---- |
