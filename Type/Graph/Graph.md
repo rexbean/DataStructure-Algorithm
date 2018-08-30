@@ -288,8 +288,8 @@ private void DFSHelper(Integer i, boolean[] visited){
 ```
 
 
-## [Topological Sort](https://github.com/rexbean/L/master/Type/Graph/TopologicalSort.md)
-## [UnionFind](https://github.com/rexbean/L/master/Type/Graph/UnionFind.md)
+## [Topological Sort](https://github.com/rexbean/L/blob/master/Type/Graph/TopologicalSort.md)
+## [UnionFind](https://github.com/rexbean/L/blob/master/Type/Graph/UnionFind.md)
 
 ## Find a Ring
 
