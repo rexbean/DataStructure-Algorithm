@@ -7,13 +7,14 @@
 - [Quick Union With Path Compression](#WQUPC)
 - [Analysis](#analysisOfAll)
 
-| # | # of prob | Status | Note |
-|-- | ----------| -------| -----|
-|1  | 130|To be Done ||
-|2  | 261|Completed| if(n == 1 && edges.length == 0)<br>it is a graph valid Tree|
-|3  | 547|Completed| find out the real number of n|
-|4  | 323|Completed| if(edges.length == 0)<br>there are n components;|
-| 5 | 684|Completed| when the index of node is from 1<br> the index of node != it's index of the id|
+| #   | # of prob | Status     | Note                                                                           |
+| --- | --------- | ---------- | ------------------------------------------------------------------------------ |
+| 1   | 130       | To be Done |                                                                                |
+| 2   | 261       | Completed  | if(n == 1 && edges.length == 0)<br>it is a graph valid Tree                    |
+| 3   | 547       | Completed  | find out the real number of n                                                  |
+| 4   | 323       | Completed  | if(edges.length == 0)<br>there are n components;                               |
+| 5   | 684       | Completed  | when the index of node is from 1<br> the index of node != it's index of the id |
+| 6   | 737       | Completed  | need to be improved                                                                               |
 
 ## <h2 id = "quickFind">Quick Find</h2>
 - Data structure.
@@ -27,12 +28,12 @@
   id[i] 0 1 9 9 9 6 6 7 8 9
   // 5 and 6 are connected
   // 2, 3, 4, and 9 are connected
-  
+
   // Do union of 3 and 6
   // 2, 3, 4, 5, 6, and 9 are connected
       i 0 1 2 3 4 5 6 7 8 9
   id[i] 0 1 6 6 6 6 6 7 8 6
-  ``` 
+  ```
 - Implementation
   ``` Java
   public class QuickFind{
@@ -67,9 +68,9 @@
   ``` Java
       i 0 1 2 3 4 5 6 7 8 9
   id[i] 0 1 9 4 9 6 6 7 8 9
-  
+
   // 3's root is 9; 5's root is 6
-  // 3 and 5 are not connected 
+  // 3 and 5 are not connected
   // Union 3, 5
       i 0 1 2 3 4 5 6 7 8 9
   id[i] 0 1 9 4 9 6 9 7 8 9
@@ -108,12 +109,12 @@
   - Trees can get tall.
   - Find too expensive (could be N steps)
   - Need to do find to do union
- 
+
     | algorithm | union | find |
     |-----------|-------|------|
     | quick Find |  N | 1 |
     | quick union | N* | N |
-    
+
     \* includes of the cost of find
 ## Improvement
 ### <h3 id = "WQU">Weighted Quick Union<h3>
@@ -153,7 +154,7 @@
               id[i] = j;
               sz[j] += sz[i];
           } else {
-              id[j] = i; 
+              id[j] = i;
               sz[i] += sz[j];
           }
       }
@@ -162,14 +163,14 @@
 - Analysis
   - Find: takes time proportional to depth of p and q.
   - Union: takes constant time, given roots.
-  - Fact: depth is at most lg N. 
-  
+  - Fact: depth is at most lg N.
+
   | Algorithm | Union | Find |
   |-----------| ------| -----|
   |Quick Find | N| 1|
   |Quick Union| N*| N|
-  |WQU| lgN*|LgN|   
-  
+  |WQU| lgN*|LgN|
+
   \* includes of the cost of find
 ### <h3 id ="pathCompression">Path Compression</h3>
 - Just after computing the root of i, set the id of each examined node to root(i).
@@ -187,7 +188,7 @@
   }
   ```
 ### <h3 id= "WQUPC">Quick Union With Path Compression</h3>
-- Theorem: 
+- Theorem:
   - Starting from an empty data structure, any sequence of M union and find operations on N objects takes O(N + M lg* N) time.
   - In theory, WQUPC is not quite linear. In practice, WQUPC is linear. Because lgN is a constant in the universe
 - Implementation
@@ -219,7 +220,7 @@
               id[i] = j;
               sz[j] += sz[i];
           } else {
-              id[j] = i; 
+              id[j] = i;
               sz[i] += sz[j];
           }
       }
