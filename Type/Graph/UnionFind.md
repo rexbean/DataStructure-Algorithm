@@ -6,6 +6,14 @@
 - [Path Compression](#pathCompression)
 - [Quick Union With Path Compression](#WQUPC)
 - [Analysis](#analysisOfAll)
+
+| # | # of prob | Status | Note |
+|-- | ----------| -------| -----|
+|1  | 130|To be Done ||
+|2  | 261|Completed| if(n == 1 && edges.length == 0)<br>it is a graph valid Tree|
+|3  | 547|Completed| find out the real number of n|
+|4 | 323|Completed|if(edges.length == 0)<br>there are n components;|
+
 ## <h2 id = "quickFind">Quick Find</h2>
 - Data structure.
   - Integer array id[] of size N.
