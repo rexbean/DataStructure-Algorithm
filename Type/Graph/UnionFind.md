@@ -12,7 +12,8 @@
 |1  | 130|To be Done ||
 |2  | 261|Completed| if(n == 1 && edges.length == 0)<br>it is a graph valid Tree|
 |3  | 547|Completed| find out the real number of n|
-|4 | 323|Completed|if(edges.length == 0)<br>there are n components;|
+|4  | 323|Completed| if(edges.length == 0)<br>there are n components;|
+| 5 | 684|Completed| when the index of node is from 1<br> the index of node != it's index of the id|
 
 ## <h2 id = "quickFind">Quick Find</h2>
 - Data structure.
