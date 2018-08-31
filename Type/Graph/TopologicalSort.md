@@ -1,15 +1,26 @@
 # Topological Sort -- onion peeling
-- [tips](#tips)
-- [applications](#applications)
-- [implementation](#implementation)
+- [Procedure](#procedure)
+- [Tips](#tips)
+- [Applications](#applications)
+  - Judge whether a graph has a ring
+  - Built a graph from pairs of orders
+    - Find length of the longest path
+    - Find the minimum height tree
+- [Implementation](#implementation)
 
 | #   | # of Prob | Status    | Type             | note |
 | --- | --------- | --------- | ---------------- | ---- |
 | 1   | 207       | Completed | Topological Sort | whether things can be done<br>according to the order     |
 | 2   | 210       | Completed | Topological Sort | output the order     |
 | 3   | 444       | To be Done | Topological Sort | 1. How many ways can get the end<br> 2. judge whether a graph's nodes are in the order of other sequence     |
-
-
+## <h2 id = "procedure">Procedure</h2>
+- Built the graph from pairs of order
+  - Using pairs to build a graph(ArrayList[]/ Array[][])
+  - Compute the inDegree
+  - Do something with the leaf
+  - Update the inDegree, find the new leaves.
+- Compute the in Degree
+- Do BFS and update the in Degree
 ## <h2 id = "tips">Tips</h2>
 - Using Adjacency Matrix and for-loop can add the element into the queue in a specific order
 - The number of the elements in the queue represents how many ways it can go next
@@ -19,11 +30,6 @@
   - When Queue is Empty, compare the count and number of node.
   - If count == # of node, it does not have ring.
   - Otherwise, it has a ring
-- **Built a graph from pairs of order**
-  - Using pairs to build a graph(ArrayList[]/ Array[][])
-  - Compute the inDegree
-  - Do something with the leaf
-  - Update the inDegree, find the new leaves.
 - **Find the longest path in the graph**
   - When doing the BFS, add the height
   - Using for-loop traverse all node in the Queue, add leaves to the queue
