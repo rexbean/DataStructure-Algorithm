@@ -3,9 +3,8 @@
 - [Tips](#tips)
 - [Applications](#applications)
   - Judge whether a graph has a ring
-  - Built a graph from pairs of orders
-    - Find length of the longest path
-    - Find the minimum height tree
+  - Find length of the longest path
+  - Find the minimum height tree
 - [Implementation](#implementation)
 
 | #   | # of Prob | Status    | Type             | note |

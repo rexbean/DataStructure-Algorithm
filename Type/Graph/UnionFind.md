@@ -1,4 +1,6 @@
 # Union Find
+- [Summary](#summary)
+- [Application](#application)
 - [Union Find Slide from Princeton](https://www.cs.princeton.edu/~rs/AlgsDS07/01UnionFind.pdf)
 - [Quick Find](#quickFind)
 - [Quick Union](#quickUnion)
@@ -6,6 +8,14 @@
 - [Path Compression](#pathCompression)
 - [Quick Union With Path Compression](#WQUPC)
 - [Analysis](#analysisOfAll)
+
+## <h2 id = "summary">Sumamry</h2>
+
+- **Union Find can just used inth undirected graph**
+## <h2 id = "application">Application</h2>
+- Union Find can used to test the connectivity between nodes; 
+- How Many Components in the graph
+
 
 | #   | # of prob | Status     | Note                                                                           |
 | --- | --------- | ---------- | ------------------------------------------------------------------------------ |
