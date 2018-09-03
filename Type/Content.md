@@ -6,8 +6,8 @@
   - [Union Find](https://github.com/rexbean/L/blob/master/Type/Graph/UnionFind.md)
 - [HashMap](https://github.com/rexbean/L/blob/master/Type/HashMap/HashMap.md)
   - [Sliding Window](https://github.com/rexbean/L/blob/master/Type/HashMap/SlidingWindow.md)
-- [Two Pointer]
+- [Two Pointer](https://github.com/rexbean/L/blob/master/Type/TwoPointer.md)
 - [Linked List](https://github.com/rexbean/L/blob/master/Type/LinkedList/LinkedList.md)
 - [Tree](https://github.com/rexbean/L/blob/master/Type/Tree/Tree.md)
-  -[Binary Search Tree](https://github.com/rexbean/L/blob/master/Type/Tree/BST.md)
+  - [Binary Search Tree](https://github.com/rexbean/L/blob/master/Type/Tree/BST.md)
 - [String](https://github.com/rexbean/L/blob/master/Type/String.md)
