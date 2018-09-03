@@ -1,13 +1,21 @@
 # Content
-- [Graph](https://github.com/rexbean/L/blob/master/Type/Graph/Graph.md)
-  - BFS
-  - DFS
-  - [Topological Sort](https://github.com/rexbean/L/blob/master/Type/Graph/TopologicalSort.md)
-  - [Union Find](https://github.com/rexbean/L/blob/master/Type/Graph/UnionFind.md)
+- Basic Data Structure
+  - [Array]
+  - [Linked List](https://github.com/rexbean/L/blob/master/Type/LinkedList/LinkedList.md)
+  - [Stack](https://github.com/rexbean/L/blob/master/Type/Stack.md)
+  - [Queue]
+  - [Heap](https://github.com/rexbean/L/blob/master/Type/Heap.md)
+  - [Tree](https://github.com/rexbean/L/blob/master/Type/Tree/Tree.md)
+    - [Binary Search Tree](https://github.com/rexbean/L/blob/master/Type/Tree/BST.md)
+  - [Graph](https://github.com/rexbean/L/blob/master/Type/Graph/Graph.md)
+    - BFS
+    - DFS
+    - [Topological Sort](https://github.com/rexbean/L/blob/master/Type/Graph/TopologicalSort.md)
+    - [Union Find](https://github.com/rexbean/L/blob/master/Type/Graph/UnionFind.md)
 - [HashMap](https://github.com/rexbean/L/blob/master/Type/HashMap/HashMap.md)
   - [Sliding Window](https://github.com/rexbean/L/blob/master/Type/HashMap/SlidingWindow.md)
-- [Two Pointer](https://github.com/rexbean/L/blob/master/Type/TwoPointer.md)
-- [Linked List](https://github.com/rexbean/L/blob/master/Type/LinkedList/LinkedList.md)
-- [Tree](https://github.com/rexbean/L/blob/master/Type/Tree/Tree.md)
-  - [Binary Search Tree](https://github.com/rexbean/L/blob/master/Type/Tree/BST.md)
 - [String](https://github.com/rexbean/L/blob/master/Type/String.md)
+- [Two Pointer](https://github.com/rexbean/L/blob/master/Type/TwoPointer.md)
+
+
+
