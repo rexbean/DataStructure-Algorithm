@@ -1,4 +1,22 @@
 # LinkedList
+- [Summary](#summary)
+## <h2 id = "summary">Summary</h2>
+1. Using slow, fast two pointer can get the middle of the linkedList.
+    ``` Java
+    ListNode slow = head;
+    ListNode fast = head;
+    while(fast != null && fast.next != null){
+        fast = fast.next.next;
+        slow = slow.next;
+    }
+    ```
+
+    | # of nodes | Fast              | Slow                                  |
+    | ---------- | ----------------- | ------------------------------------- |
+    | Odd        | fast.next => null | Slow => middle                        |
+    | Even       | fast =>null       | Slow => First node of the second part |
+
+
 
 | #   | # of prob | Status    | Type         | Note                                                                                                                                                                          |
 | --- | --------- | --------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
