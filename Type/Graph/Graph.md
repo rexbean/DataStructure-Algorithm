@@ -7,7 +7,8 @@
 - [DFS](#dfs)
 - [DFS with Stack](#dfs/wStack)
 - [Topological Sort](https://github.com/rexbean/L/blob/master/Type/Graph/TopologicalSort.md)
-- [UnionFind](http://github.com/rexbean/L/blob/master/Type/Graph/UnionFind.md)
+- [UnionFind](https://github.com/rexbean/L/blob/master/Type/Graph/UnionFind.md)
+- [Dijkstra](https://github.com/rexbean/L/blob/master/Type/Graph/Dijkstra.md)
 
 
 ## <h2 id = "summary">Summary</h2>
@@ -23,11 +24,12 @@
 | How Many Components in the graph | Union Find       | (M + N)lgN      |                  |
 
 
-| #   | # of Prob | Status    | Type                 | note                                                                                                                             |
-| --- | --------- | --------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | 310       | Completed | Onion                |                                                                                                                                  |
-| 2   | 399       | Completed | DFS<br>back Tracking | 1. DFS needs visited array/map<br>2. back Tracking needs variable **sub**<br>3. back tracking pay attenction to the end conditon |
-| 3   | 841       | Completed | DFS                 | **DFS can be used to detect whether two nodes can reached or not in directed graph** |
+| #   | # of Prob | Status     | Type                 | note                                                                                                                             |
+| --- | --------- | ---------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | 310       | Completed  | Onion                | |
+| 2   | 399       | Completed  | DFS<br>back Tracking | 1. DFS needs visited array/map<br>2. back Tracking needs variable **sub**<br>3. back tracking pay attenction to the end conditon |
+| 3   | 841       | Completed  | DFS | **DFS can be used to detect whether two nodes can reached or not in directed graph** |
+| 4   | 332       | To be Done | DFS | when recursion, container cannot do the remove operation |
 
 
 
