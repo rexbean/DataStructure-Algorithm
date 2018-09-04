@@ -548,7 +548,8 @@
         result += distance[i] * (nums.length - distance[i]);
     }
     return result;
-## merge two Intervals
+## <h2 id = "merge">Merge</h2>
+### merge two Intervals
     if(i1.start <= i2.start){
         if(i2.start <= i1.end){
             int end = Math.max(i1.end, i2.end);
@@ -594,41 +595,41 @@
     }
 
 ## merge k sorted array / lists / Intervals(Using priorityQueue)
-    // corner case
-    Comparator<T> TComparator = new Comparator<T>(){
-        public int compare(T t1, T t2){
-            return t1 - t2;// t1.start - t2.start for Interval
-        }
-    };
+  ``` Java
+  if(lists == null || lists.length == 0){
+      return null;
+  }
 
-    ListNode dummy = new ListNode(0);
-    ListNode head = dummy;
+  Queue<ListNode> heap = new PriorityQueue<>(lists.length, (node1, node2) -> node1.val - node2.val); // for interval, here will be i1.start - i2.start;
 
-    //ArrayList<Interval> result = new ArrayList<>();
-    Queue<T> heap = new PriorityQueue<T>(A.size(), TComparator);
-    for(int i = 0 ;i < A.size(); i++){
-        if(A[i] != null){
-            heap.offer(A[i]);
-        }
-    }
+  ListNode dummy = new ListNode(0);
+  ListNode cur = dummy;
 
-    //Interval last = heap.poll();
-    while(!heap.isEmpty()){
-        T t = heap.poll();
-        head.next = T;
-        head = head.next;
-        if(t.next != null){
-            heap.offer(t.next);
-        }
-        //Interval t = heap.poll();
-        // if(t.start <= last.end){
-        //     last.end = Math.max(last.end, t.end);
-        // } else {
-        //     result.add(last);
-        //     last = t;
-        //}
-    }
-    return dummy.next;
+  for(ListNode l : lists){
+      if(l != null){
+          heap.offer(l);
+      }
+
+  }
+
+  while(!heap.isEmpty()){
+      ListNode temp = heap.poll();
+      cur.next = new ListNode(temp.val);
+      cur = cur.next;
+      if(temp.next != null){
+          heap.offer(temp.next);
+      }
+      //Interval t = heap.poll();
+      // if(t.start <= last.end){
+      //     last.end = Math.max(last.end, t.end);
+      // } else {
+      //     result.add(last);
+      //     last = t;
+      //}
+  }
+  return dummy.next;
+
+  ```
 ## Sliding window
 - sliding window template: https://leetcode.com/problems/find-all-anagrams-in-a-string/discuss/92007/sliding-window-algorithm-template-to-solve-all-the-leetcode-substring-search-problem
 - sliding window may use queue to be a break point
