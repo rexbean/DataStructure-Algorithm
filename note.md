@@ -670,3 +670,28 @@
             }
         }
         len = Math.max(len, right - left);
+## <h2 id = "add">Add</h2>
+  ``` Java
+  while(num1 != end || num2 != end){
+      int first = num1[i].exists() ? num1[i] : 0;
+      int sec = nums2[i].exists() ? num2[i] : 0;
+
+      int sum = first + sec + carry;
+      carry = 0;
+      if(sum > 9){
+          carry = 1;
+          sum = sum % 10;
+      }
+      new[index] = sum;
+      index++;
+      if(num1[i].exists()){
+          num1 = num1.next;
+      }
+      if(num2[i].exists()){
+          num2 = num2.next;
+      }
+  }
+  if(carry != 0){
+      new[index] = carry;
+  }
+  ```
