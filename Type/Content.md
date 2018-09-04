@@ -1,6 +1,6 @@
 # Content
 - Basic Data Structure
-  - [Array]
+  - [Array](https://github.com/rexbean/L/blob/master/Type/LinkedList/Array.md)
   - [Linked List](https://github.com/rexbean/L/blob/master/Type/LinkedList/LinkedList.md)
   - [Stack](https://github.com/rexbean/L/blob/master/Type/Stack.md)
   - [Queue]
@@ -16,6 +16,3 @@
   - [Sliding Window](https://github.com/rexbean/L/blob/master/Type/HashMap/SlidingWindow.md)
 - [String](https://github.com/rexbean/L/blob/master/Type/String.md)
 - [Two Pointer](https://github.com/rexbean/L/blob/master/Type/TwoPointer.md)
-
-
-
