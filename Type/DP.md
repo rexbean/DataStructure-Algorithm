@@ -3,6 +3,13 @@
 | # | # of Prob | Status | Type | Note |
 | --|-----------|--------|------|------|
 | 1 |746|Completed|1 | result\[i] = Math.min(result\[i - 1] + cost\[i - 1], result\[i - 2] + cost\[i - 2])         |
+| 2 |256|To be Done | 1 | |
+| 3 | 70 |Completed | 1 | result\[i] = result\[i - 1] + result\[i - 2]|
+| 4 |198 |To be Done|interval||
+| 5 |276| To be Done|interval||
+| 6 |303|To be Done| prefix Sum|sum\[i,j] = sum\[j] - sum\[i]|
+| 7 |338|Completed|Generate Number| dp\[i<<1] = dp\[i]; dp\[((i<<1) |1)] = dp\[i] + 1;|
+| 8 |413|Completed|2->1|When 2 deminsion can be 1 demension|
 ## 1. Ugly Number
 Ugly numbers are numbers whose only prime factors are 2, 3 or 5. The sequence 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, … shows the first 11 ugly numbers. By convention, 1 is included.
 Given a number n, the task is to find n’th Ugly number.
