@@ -630,47 +630,7 @@
   return dummy.next;
 
   ```
-## Sliding window
-- sliding window template: https://leetcode.com/problems/find-all-anagrams-in-a-string/discuss/92007/sliding-window-algorithm-template-to-solve-all-the-leetcode-substring-search-problem
-- sliding window may use queue to be a break point
-- the condition that left pointer ++;
-    1. all letters existed and the times are correct
-        using one count to represent this.
-    2. Using map.get() == 1 to represent appearing, using map.get() == 0 represents not appearing
-    3. k distinct characters, count represents the number of distinct letters
-- template
 
-        // corner case
-        <!-- HashMap<Character, Integer> map = new HashMap<>();
-        for(Character c: s){
-            map.put(c, map.getOrDefault(c, 0) + 1);
-        } -->
-
-        int left = 0;
-        int right = 0;
-        int count = 0;
-        int len = Integer.MAX_VALUE;
-
-        while(right < p.length()){
-            char c = p.charAt(right);
-            map.put(c, map.getOrDefault(c, 0) + 1);
-            if(map.get(c) == 1){
-                count++;
-            }
-            right++;
-
-            while(count > k){
-                char cTemp = p.charAt(left);
-                if(map.containsKey(cTemp)){
-                    map.put(cTemp, map.get(cTemp) - 1);
-                }
-                if(map.get(cTemp) == 0){
-                    count--;
-                }
-                left++;
-            }
-        }
-        len = Math.max(len, right - left);
 ## <h2 id = "add">Add</h2>
   ``` Java
   while(num1 != end || num2 != end){
@@ -696,3 +656,5 @@
       new[index] = carry;
   }
   ```
+
+<h2 id ="kFrequency">Top k Frequent</h2>

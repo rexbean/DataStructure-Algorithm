@@ -58,7 +58,8 @@
   }
 
   ```
-- Using slow, fast two pointer can **get the middle of the linkedList**.
+- **<div id = "slowFast">Slow Fast Two Pointers</div>**
+  - **get the middle of the linkedList**.
     ``` Java
     ListNode slow = head;
     ListNode fast = head;
@@ -68,25 +69,27 @@
     }
     ```
 
+
     | # of nodes | Fast              | Slow                                  |
     | ---------- | ----------------- | ------------------------------------- |
     | Odd        | fast.next => null | Slow => middle                        |
     | Even       | fast =>null       | Slow => First node of the second part |
 
 
-- **Judge whether a linked List has a cycle**
-  ``` Java
-  ListNode slow = head;
-  ListNode fast = head;
-  while(fast != null && fast.next != null){
-      fast = fast.next.next;
-      slow = slow.next;
-      if(slow == fast){
-          return true;
-      }
-  }
-  return false;
-  ```
+  - **Judge whether a linked List has a cycle**
+    ``` Java
+    ListNode slow = head;
+    ListNode fast = head;
+    while(fast != null && fast.next != null){
+        fast = fast.next.next;
+        slow = slow.next;
+        if(slow == fast){
+            return true;
+        }
+    }
+    return false;
+    ```
+  - **get the node which is the i-th node from the end**
 - **<div id = "intersection">Intersection <div>**
   ``` Java
   ListNode a = headA;
@@ -113,4 +116,5 @@
 | 11  | 138       | To be Done | Copy                    |                                                                                |
 | 12  | 25        | Completed  | Reverse                 | [Reverse](#reverse)                                                            |
 | 13  | 143       | Completed  | Reverse                 | [Reverse](#reverse), it can reverse the second half                            |
-| 14  | 160       | Completed  | Intersection                        | [Intersection](#intersection)                                                                                |
+| 14  | 160       | Completed  | Intersection            | [Intersection](#intersection)                                                  |
+| 15  | 817       | Completed  | Connectivity            |                                                                                |
