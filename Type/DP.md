@@ -1,15 +1,30 @@
 # Dynamic Programming
+- [Summary](#summary)
 
-| # | # of Prob | Status | Type | Note |
-| --|-----------|--------|------|------|
-| 1 |746|Completed|1 | result\[i] = Math.min(result\[i - 1] + cost\[i - 1], result\[i - 2] + cost\[i - 2])         |
-| 2 |256|To be Done | 1 | |
-| 3 | 70 |Completed | 1 | result\[i] = result\[i - 1] + result\[i - 2]|
-| 4 |198 |To be Done|interval||
-| 5 |276| To be Done|interval||
-| 6 |303|To be Done| prefix Sum|sum\[i,j] = sum\[j] - sum\[i]|
-| 7 |338|Completed|Generate Number| dp\[i<<1] = dp\[i]; dp\[((i<<1) |1)] = dp\[i] + 1;|
-| 8 |413|Completed|2->1|When 2 deminsion can be 1 demension|
+- <h2 id = "summary">Summary</h2>
+
+	- If a problem can be split into the same subproblem, it may use Dynamic Programming.
+	- Find out the state formula, from subproblem to the big problem.
+	- If the formula has [i - 1], then the order to fill the table is from small to large.
+	- If the formula has [i + 1], then the order should be reversed.
+
+
+| #   | # of Prob | Status     | Type            | Note                                                                                                       |
+| --- | --------- | ---------- | --------------- | ---------------------------------------------------------------------------------------------------------- |
+| 1   | 746       | Completed  | 1               | result\[i] = Math.min(result\[i - 1] + cost\[i - 1], result\[i - 2] + cost\[i - 2])                        |
+| 2   | 256       | To be Done | 1               |                                                                                                            |
+| 3   | 70        | Completed  | 1               | result\[i] = result\[i - 1] + result\[i - 2]                                                               |
+| 4   | 198       | Completed  | 2               | selected[i] = unselecte[i - 1] + nums[i];<br> unselected[i] = Math.max(unselecte[i - 1], selected[i - 1]); |
+| 5   | 276       | Completed  | 2               | same[i] = diff[i - 1]; <br>diff[i] = same[i - 1] * (k - 1) + diff[i - 1] * (k - 1);                        |
+| 6   | 303       | Completed  | prefix Sum      | sum[0] = 0;sum\[i,j] = sum\[j] - sum\[i]                                                                   |
+| 7   | 338       | Completed  | Generate Number | dp\[i<<1] = dp\[i]; dp\[((i<<1)\| 1)] = dp\[i] + 1;                                                        |
+| 8   | 413       | Completed  | 2->1            | num += 1;<br>sum += num;<br>                                                                               |
+| 9   | 121       | Completed  | 1               | profit[i] = Math.max(profit[i - 1], prices[i] - min);<br> min = Math.min(min, prices[i]);                  |
+| 10  | 877       | To be Done | 2               |                                                                                                            |
+| 11  | 647       | Completed  | 2               | dp[i][j] = dp[i + 1][j - 1] && s.charAt(i) == s.charAt(j);<br>                                             |
+| 12  | 322       | Completed  | 1               | dp[i] = Math.min(dp[i], dp[i - coin] + 1);                                                                 |
+| 13  | 62        | Completed  | 2               | dp[i][j] = dp[i - 1][j] + dp[i][j - 1];                                                                    |
+| 14  | 139       | Completed  | 2 ->1                |rolling array, 2 demension to 1 demension **To be done** |
 ## 1. Ugly Number
 Ugly numbers are numbers whose only prime factors are 2, 3 or 5. The sequence 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, … shows the first 11 ugly numbers. By convention, 1 is included.
 Given a number n, the task is to find n’th Ugly number.
