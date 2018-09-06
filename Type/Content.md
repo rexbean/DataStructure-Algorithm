@@ -1,5 +1,6 @@
 # Content
-- Basic Data Structure
+- Basic Data Structures
+  - [String](https://github.com/rexbean/L/blob/master/Type/String.md)
   - [Array](https://github.com/rexbean/L/blob/master/Type/LinkedList/Array.md)
   - [Linked List](https://github.com/rexbean/L/blob/master/Type/LinkedList/LinkedList.md)
   - [Stack](https://github.com/rexbean/L/blob/master/Type/Stack.md)
@@ -12,7 +13,8 @@
     - DFS
     - [Topological Sort](https://github.com/rexbean/L/blob/master/Type/Graph/TopologicalSort.md)
     - [Union Find](https://github.com/rexbean/L/blob/master/Type/Graph/UnionFind.md)
-- [HashMap](https://github.com/rexbean/L/blob/master/Type/HashMap/HashMap.md)
+  - [HashMap](https://github.com/rexbean/L/blob/master/Type/HashMap/HashMap.md)
+- Algorithms
   - [Sliding Window](https://github.com/rexbean/L/blob/master/Type/HashMap/SlidingWindow.md)
-- [String](https://github.com/rexbean/L/blob/master/Type/String.md)
-- [Two Pointer](https://github.com/rexbean/L/blob/master/Type/TwoPointer.md)
+  - [Dynamic Programming](https://github.com/rexbean/L/blob/master/Type/DP.md)
+  - [Two Pointer](https://github.com/rexbean/L/blob/master/Type/TwoPointer.md)
