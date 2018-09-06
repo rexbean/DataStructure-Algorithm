@@ -1,4 +1,22 @@
 # Tree
+[Summary](#summary)
+[Concept](#concept)
+
+<h2 id = "summary">Summary</h2>
+- Recursion should think three things
+  1. End condition
+  2. What should every method do
+
+- Top-down always does not have a return value;(Operation)
+- Bottom-up always has a return value;(Return value determine what to do next)
+
+
+- Bottom-Up should think about:
+  - the return value of the leaf
+  - The operation of the smallest part, maybe one node, maybe two nodes
+
+
+
 | #   | # of Prob | Status    | Type              | Note                                                                         |
 | --- | --------- | --------- | ----------------- | ---------------------------------------------------------------------------- |
 | 1   | 104       | Completed | BFS               | BFS can get the depth                                                        |
@@ -15,15 +33,53 @@
 | 12  | 105       | Completed | Pre + In =>Tree   | Mengbi                                                                             |
 
 
+<h2 id = "concept">Concept</h2>
 
-- Recursion should think three things
-  1. End condition
-  2. What should every method do
+- [Tree](#tree)
+- [Binary Tree](#binaryTree)
+- [Binary Search Tree](#bst)
+<h3 id = "tree">Tree</h3>
 
-- Top-down always does not have a return value;(Operation)
-- Bottom-up always has a return value;(Return value determine what to do next)
+  - **What is a Tree**
 
+    Tree is a non-linear data structure, which organizes data hieractically. Data are stored in **Nodes**,and nodes are connected by **Edges**.
+  - **Node**
+    ``` Java
+    class Node{
+        int val;
+        ArrayList<Node> children;
+        public Node(int val){
+            this.val = val;
+            children = new ArrayList<>();
+        }
+    }
+    ```
+    - Node can have zero or more children.
+    - Every node can have only one parent.
+    - Every node can have their subtrees.
+  - **Root**: The first node which does not have any parent.
+  - **Degree**:
+    - Node's degree: The number of children the node has.
+    - Tree's degree: The maximum degree the nodes' have.
+  - **Leave**: The node whose degree is 0;
+  - **Level**: The root's level is **1**.
+  - **Height**: The height of the tree is the length of the longest path from root to leaf.
+  - **Depth**: The length of the path from node to the root.
+  - **Property**
+    1. **One Root**: Tree has only one root
+    2. **No Ring**: It does not have any ring!!!
+<h3 id = "binaryTree">Binary Tree</h3>
 
-- Bottom-Up should think about:
-  - the return value of the leaf
-  - The operation of the smallest part, maybe one node, maybe two nodes
+  - **What is a Binary Tree**
+  Binary tree is a tree that the number of any node's children is at most 2.
+
+  - **Property**
+    1. The number of node on level i is maximum: **2^(i - 1)(i >= 1)**
+    2. The binary tree whose height is k has at most **2^k - 1 nodes.**
+    3. N nodes can build a binary tree whose height is at least**lgn+1**
+    4. n0 represents the number of nodes which has no children.
+    <br>n2 represents the number of nodes which has 2 children.
+    <br>**no = n2 + 1**;
+  - Full Binary Tree
+    - A tree whose height is h, and the number of nodes are 2^h - 1;
+![Full_Binary_Tree](assets/markdown-img-paste-20180906160359186.png)
