@@ -3,7 +3,7 @@
 
 <h2 id = "summary">Summary</h2>
 - Whether the input is case sensitive or not?
--
+- 
 | #   | # of Prob | Status     | Note                                                                                              |
 | --- | --------- | ---------- | ------------------------------------------------------------------------------------------------- |
 | 1   | 681       | Completed  | Corner Case                                                                                       |

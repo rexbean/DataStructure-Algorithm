@@ -667,7 +667,9 @@
     }
     ```
 ## <h2 id = "intersection">Intersection<h2>
-- Use Set/Array (Time: O(n), Space:O(n))[HasMap](#https://githubs.com/rexbean/L/blob/master/Type/HashMap/HashMap.md#intersection)
+
+- Use Set/Array (Time: O(n), Space:O(n))
+[HasMap](#https://githubs.com/rexbean/L/blob/master/Type/HashMap/HashMap.md#intersection)
 
   1. **String / Small difference integer ? array : HashSet**
   2. **Amounts equal ? HashMap : HashSet**

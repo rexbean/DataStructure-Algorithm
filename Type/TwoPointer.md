@@ -40,7 +40,7 @@
     int left = 0;
     int right = 0;
     while(right < nums.length){
-        if(nums[right] does not meet the condition){
+        if(nums[right] does not meet left part condition){
             int temp = nums[left];
             nums[left] = nums[right];
             nums[right] = temp;
@@ -56,7 +56,7 @@
     int left = 0;
     int right = nums.length - 1;
     while(left < right){
-        if(nums[left] meets the condition){
+        if(nums[left] meets right part condition){
             int temp = nums[left];
             nums[left] = nums[right];
             nums[right] = nums[left];
