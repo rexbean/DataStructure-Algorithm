@@ -44,7 +44,7 @@
   ```
  | #   | # of prob | Status     | Type           | Note                                                                                                                                                                 |
 | --- | --------- | ---------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | 771       | Completed  | HashSet        | [Note.intersection](#https://github.com/rexbean/L/blob/master/Type/note.md#intersection)                                                                             |
+| 1   | 771       | Completed  | HashSet        | [Note.intersection](https://github.com/rexbean/L/blob/master/Type/note.md#intersection)                                                                             |
 | 2   | 760       | Completed  | K-V(positions) |                                                                                                                                                                      |
 | 3   | 359       | Completed  | K-V(time)      |                                                                                                                                                                      |
 | 4   | 811       | Completed  | K-V(times)     | int index = 0;<br>while(index != -1){<br>&emsp;&emsp;s = s.indexOf(".");<br>&emsp;&emsp;s=s.substring(index + 1);<br>}</pre>                                         |
