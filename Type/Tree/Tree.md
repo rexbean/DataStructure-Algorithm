@@ -1,6 +1,6 @@
 # Tree
-[Summary](#summary)
-[Concept](#concept)
+- [Summary](#summary)
+- [Concept](#concept)
 
 <h2 id = "summary">Summary</h2>
 - Recursion should think three things
@@ -76,10 +76,20 @@
   - **Property**
     1. The number of node on level i is maximum: **2^(i - 1)(i >= 1)**
     2. The binary tree whose height is k has at most **2^k - 1 nodes.**
-    3. N nodes can build a binary tree whose height is at least**lgn+1**
+    3. N nodes can build a binary tree whose height is at least **lgn+1**
     4. n0 represents the number of nodes which has no children.
     <br>n2 represents the number of nodes which has 2 children.
     <br>**no = n2 + 1**;
-  - Full Binary Tree
-    - A tree whose height is h, and the number of nodes are 2^h - 1;
+  - **Full Binary Tree**
+    - A tree whose whose all nodes have 2 children.
+    - If it's height is h, and the number of nodes are **2^h - 1**;
 ![Full_Binary_Tree](assets/markdown-img-paste-20180906160359186.png)
+    - [Judge a full binary tree](#judgeFullBT)
+
+  - **Complete Binary Tree**
+    - A tree whose each level must be all filled, except the last level. The nodes are as far left as possible.
+    ![Complete_Binary_Tree](assets/markdown-img-paste-20180906161804893.png)
+
+    - Full binary tree is a special complete binary tree.
+    - [Judge a complete binary Tree](#judgeCompleteBT)
+<h3 id = "bst"><a href = "https://github.com/rexbean/L/blob/master/Type/Tree/BST.md">Binary Search Tree</a></h3>

@@ -657,4 +657,38 @@
   }
   ```
 
-<h2 id ="kFrequency">Top k Frequent</h2>
+## <h2 id = "kFrequency">Top k Frequent</h2>
+## <h2 id = "removeDuplicate">Remove Duplicate</h2>
+1. Using HashSet/HashMap on input or candidate output.
+2. Using while loop
+    ``` java
+    While(i is leagal && [i] == [i - 1]){
+        i++;
+    }
+    ```
+## <h2 id = "intersection">Intersection<h2>
+- Use Set/Array (Time: O(n), Space:O(n))[HasMap](#https://githubs.com/rexbean/L/blob/master/Type/HashMap/HashMap.md#intersection)
+
+  1. **String / Small difference integer ? array : HashSet**
+  2. **Amounts equal ? HashMap : HashSet**
+- Use **two pointer**(Time: O(nlog(n)), Space: O(1))
+
+  **Integers => sort + two pointers**
+  ``` Java
+  Arrays.sort(<firstContainer>);
+  Arrays.sort(<secContainer>);
+  while(i < <first>.size()
+        && j < <second>.size()>){
+        if(<first>[i] == <second>[j]){
+            i++;
+            j++;
+            // add to list/set
+            result++;
+        } else if(<first>[i] < [second][j]){
+            i++;
+        } else {
+            j++;
+        }
+  }
+  ```
+- Use Binary Search

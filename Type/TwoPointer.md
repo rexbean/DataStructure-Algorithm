@@ -1,11 +1,24 @@
 # Two Pointers
-
-[Summary](#summary)
+- [Summary](#summary)
+- [Applications](#applications)
 
 <h2 id = "summary">Summary</h2>
 
 - **Do not forget to update the pointer value after operation!!**
-- **<div id = "removingDuplicate">Formular for removing duplicate</div>**
+
+<h2 id = "applications">Applications</h2>
+
+1. Exists or not(Intersection)
+2. Merge
+3. Remove Duplicate
+4. Separating
+5. Partition
+
+- **<h3 id = "existsOrNot">Exists or not(Intersection)</h3>**
+  - One in other
+  - Sum in one
+- **<h3 id = "merge">Merge</h3>**
+- **<h3 id = "removingDuplicate">Removing duplicate</h3>**
   - Input: The number should appear **at most n times(n != 0)**
   ``` Java
   int left = n - 1;
@@ -19,7 +32,7 @@
   }
   return left + 1;
   ```
-- **<div id ="separating">Separating</div>**
+- **<h3 id ="separating">Separating</h3>**
 
   - **Keep Order(Same Direction)**
 
