@@ -28,16 +28,21 @@
 
 ## <h2 id = "applications">Applications</h2>
 - If a problem is related to combination and permutation, it may be a backtracking problem
+- Cut
+- Concatenate
 
 
-
-| #   | # of Prob | Status    | Note                                                                        |
-| --- | --------- | --------- | --------------------------------------------------------------------------- |
-| 1   | 784       | Completed | sub = sub.substring()                                                       |
-| 2   | 526       | Completed | used array && start Index                                                   |
-| 3   | 22        | Completed | sub = sub.substring(start, end + 1)                                         |
-| 4   | 46        | Completed | used array                                                                  |
-| 5   | 216       | Completed | choose a good end condition                                                 |
-| 6   | 51        | Completed |                                                                             |
-| 7   | 52        | Completed | two array,<br> left diagnal: row - col + n - 1,<br>right diagnal: row + col |
-| 8   | 47        | Completed          |                                                                             |
+| #   | # of Prob | Status     | Note                                                                        |
+| --- | --------- | ---------- | --------------------------------------------------------------------------- |
+| 1   | 784       | Completed  | sub = sub.substring()                                                       |
+| 2   | 526       | Completed  | used array && start Index                                                   |
+| 3   | 22        | Completed  | sub = sub.substring(start, end + 1)                                         |
+| 4   | 46        | Completed  | used array                                                                  |
+| 5   | 216       | Completed  | choose a good end condition                                                 |
+| 6   | 51        | Completed  |                                                                             |
+| 7   | 52        | Completed  | two array,<br> left diagnal: row - col + n - 1,<br>right diagnal: row + col |
+| 8   | 47        | Completed  |                                                                             |
+| 9   | 90        | Completed  | Duplicate of Combination                                                    |
+| 10  | 131       | Completed  | Cut String                                                                  |
+| 11  | 320       | To be Done | Contatate                                                                            |
+|     |           |            |                                                                             |
