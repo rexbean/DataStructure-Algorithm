@@ -1,18 +1,136 @@
 # LinkedList
 - [Summary](#summary)
+- [Basic Knowledge](#basics)
+  - [List Node](#listNode)
+  - [Singly Linked List](#singly)
+    - [Create](#singlyCreate)
+    - [Insert](#singlyInsert)
+      - Insert at the head
+      - Insert at the end
+      - Insert in the middle
+    - [Delete](#singlyDelete)
+      - Delete the head
+      - Delete the end
+      - Delete the middle
+      - Deletion in O(1) time complexity
+      - Delete any k nodes
+      - Delete nodes with the same value
+    - [Find](#singlyFind)
+      - Find the middle
+      - Find the kth node from head
+      - Find the kth node from tail
+    - [Reverse](#singlyReverse)
+      - Reverse all
+      - Reverse half
+      - Reverse in a range
+      - Reverse in k-group
+    - [Merge](#singlyMerge)
+      - Merge two sorted Linked List
+      - Merge K sorted Linked List
+    - [Circular Singly Linked List](#singlyCircular)
+      - Create
+      - Insert
+        - Insert in particular position
+      - Delete
+      - Find
+  - [Doubly Linked List](#doubly)
+    - [Create](#doublyCreate)
 ## <h2 id = "summary">Summary</h2>
+
+## <h2 id = "basics">Basic Knowlege</h2>
+### <h3 id = "listNode"> List Node</h3>
+```Java
+class ListNode{
+    public int val;
+    public ListNode next;
+    pubic ListNode(int val){
+        this.val = val;
+    }
+}
+```
+### <h3 id = "singlyCreate"> Create a Singly Linked List</h3>
+```Java
+ListNode dummy = new ListNode(0);
+ListNode cur = dummy;
+while(<Some condition>){
+    cur.next = new ListNode(<new Value>);
+    cur = cur.next;
+}
+```
+### <h3 id = "singlyInsert"> Insert a node into the singly Linked List</h3>
+- Insert at the head
+  ```Java
+  /***
+  * head the head of the original list
+  * newNode the new node need to insert
+  * return the new head
+  ***/
+  public ListNode insertHead(ListNode head, ListNode newNode){
+      if(ListNode == null){
+          return head;
+      }
+
+      newNode.next = head;
+      return newNode;
+  }
+  ```
+- Insert at the end
+  ```Java
+  /***
+  * head: the head of the original Linked List
+  * newNode: the node need to insert
+  * return the head of the list
+  ***/
+  public ListNode insertEnd(ListNode head, ListNode newNode){
+      if(head == null){
+          return newNode;
+      }
+      if(newNode == null){
+          return head;
+      }
+      ListNode dummy = new ListNode(0);
+      dummy.next = head;
+      while(head.next != null){
+          head = head.next;
+      }
+      head.next = newNode;
+      return dummy.next;
+  }
+  ```
+- Insert in the middle
+  - Insert a new node in a sorted List
+  ```Java
+  public ListNode insert(ListNode head, ListNode newNode){
+      if(head == null){
+          return newNode;
+      }
+      if(newNode == null){
+          return head;
+      }
+      ListNode dummy = new ListNode(0);
+      dummy.next = head;
+
+      ListNode prev = dummy;
+      while(head!= null){
+          // case 1: climbing (ascending)
+          if(newNode.val <= head.val){
+              prev.next = newNode;
+              newNode.next = head;
+              return dummy.next;
+          }
+          prev = head;
+          head = head.next;
+      }
+      if(prev.val < newNode.val){
+          prev.next = newNode;
+          return dummy.next;
+      }
+      return dummy.next;
+
+  }
+  ```
 - Every time, **walk a Linked List**, **define a dummy node before**, let it next be head.
 
-- **Generate a new Linked List**
-    ``` Java
-    ListNode dummy = new ListNode(0);
-    ListNode cur = dummy;
-
-    while(<some conditions>){
-        cur.next = new ListNode(<new Value>);
-        cur = cur.next;
-    }
-    ```
 - **<div id = "delete">Delete</h2>**
   - **After deleted, do not jump to next node! Judge the new next first!**
 

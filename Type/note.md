@@ -1,15 +1,22 @@
-## 1. int
-- the division of two int will be int. If we want to get double, we just make one of the number to be double.
-    + Using a double variable
-      ``` Java
-      double a;
-      a/b
-      ```
-    + type casting
-      ``` Java
-      (double)a / b
-      ```
-## 2. Integer
+## Content
+- [int](#int)
+- [Integer](#Integer)
+
+## <h2 id = "int">int</h2>
+- **Caution!!**
+  - Addition, Multiplication may be out of bound. If we predict that will be out of bound, long type can be used advanced.
+  - Substraction may result in negative.
+  - Division
+    - Divisor can not be **zero**
+    - Result may not equal to the real divison's result
+- int => double
+  - If one of the operator is double, the result is double
+  - Using explicit type conversion.
+    ``` Java
+    int a, b;
+    (double) a/b;
+    ```
+## <h2 id = "Integer">Integer</h2>
 - int is a primitive type, Integer is a class.
 - Method
   - **Constructor**: new Integer(int) can instantiate a object of type Integer
@@ -18,14 +25,9 @@
 - Comparartion between int and Integer
   - If one of the value is a int, it will be value comparation, just compare value
   - If both are Integer, it will be object comparation. If the value of the String is in the range of IntegerCache it will be equal, otherwise it will be different.
-## 1. double
 
-## 1. addition
-- when we do the addition continuously, we should pay attention to the sum which will be out of bound.
-    + Using long get the sum of the addition
-    + If it is for the average, then we can let the sum to be double directly.
 
-## 1. loop
+## Loop
 ### if it can go into the loop
 - 数学归纳法<br/>
     * the first one must be right<br/>
@@ -638,12 +640,9 @@
       int sec = nums2[i].exists() ? num2[i] : 0;
 
       int sum = first + sec + carry;
-      carry = 0;
-      if(sum > 9){
-          carry = 1;
-          sum = sum % 10;
-      }
-      new[index] = sum;
+      carry = sum/10;
+
+      new[index] = sum % 10;
       index++;
       if(num1[i].exists()){
           num1 = num1.next;
