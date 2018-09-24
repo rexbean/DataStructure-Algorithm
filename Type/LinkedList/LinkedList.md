@@ -7,14 +7,14 @@
     - [Create](#singlyCreate)
     - [Insert](#singlyInsert)
       - Insert at the head
-      - Insert at the end
+      - Insert at the tail
       - Insert in the middle
         - Insert in the specific position
         - Insert every k nodes
         - Insert in a sorted List
     - [Delete](#singlyDelete)
       - Delete the head
-      - Delete the end
+      - Delete the tail
       - Delete the middle
       - Deletion in O(1) time complexity
       - Delete every k nodes
@@ -63,7 +63,7 @@ while(<Some condition>){
     cur = cur.next;
 }
 ```
-### <h3 id = "singlyInsert"> Insert a node into the singly Linked List</h3>
+### <h3 id = "singlyInsert"> Insert nodes into the singly Linked List</h3>
 - Insert at the head
   ```Java
   /***
@@ -80,14 +80,14 @@ while(<Some condition>){
       return newNode;
   }
   ```
-- Insert at the end
+- Insert at the tail
   ```Java
   /***
   * head: the head of the original Linked List
   * newNode: the node need to insert
   * return the head of the list
   ***/
-  public ListNode insertEnd(ListNode head, ListNode newNode){
+  public ListNode inserttail(ListNode head, ListNode newNode){
       if(head == null){
           return newNode;
       }
@@ -126,7 +126,7 @@ while(<Some condition>){
       int index = 0;
       ListNode prev = dummy;
       // case 1: pos < length;
-      // case 2: pos >= length, insert at the end;
+      // case 2: pos >= length, insert at the tail;
       while(index != pos && head != null){
           prev = head;
           head = head.next;
@@ -157,7 +157,7 @@ while(<Some condition>){
 
       ListNode dummy = new ListNode(0);
       dummy.next = head;
-      ListNdoe prev = dummy;
+      ListNode prev = dummy;
       while(head != null){
           int i = 0;
           while(i < k && head != null){
@@ -207,6 +207,129 @@ while(<Some condition>){
 
   }
   ```
+### <h3 id = "singlyDelete"> Delete nodes from the singly Linked List</h3>
+- Delete the head
+  ``` Java
+  public ListNode deleteHead(ListNode head){
+      if(head == null){
+          return head;
+      }
+
+      return head.next;
+  }
+  ```
+- Delete the tail
+  ``` Java
+  public ListNode deleteTail(ListNode head){
+      if(head == null){
+          return head;
+      }
+
+      ListNode dummy = new ListNode(0);
+      dummy.next = head;
+      while(head.next != null){
+          head = head.next;
+      }
+      head = null;
+
+      return dummy.next;
+  }
+  ```
+- Delete the middle
+  ``` Java
+  /***
+  * head : The head of the linked list
+  * pos : the position need to delete
+  * return the head of the list
+  ***/
+  public ListNode delete(ListNode head, int pos){
+      if(head == null || pos < 0){
+          return head;
+      }
+      int index = 0;
+
+      ListNode dummy = new ListNode(0);
+      dummy.next = head;
+      // walk till to the position
+      while(head != null && index != pos){
+          head = head.next;
+          index++;
+      }
+      // if the length < pos return previous head
+      if(index != pos){
+          return head;
+      }
+      // if head is not the tail then delete
+      // this method can do the Deletion in O(1) time complexity
+      if(head.next != null){
+          head = head.next.val;
+          head.next = head.next.next;
+      } else {
+          // if it is the tail then let it be null;
+          head = null;
+      }
+      return dummy.next;
+  }
+  ```
+
+- Delete every k nodes
+  ``` Java
+  public ListNode delete(ListNode head, int k){
+      if(head == null || k < 0){
+          return head;
+      }
+
+      int index = 0;
+      ListNode dummy = new ListNode(0);
+      dummy.next = head;
+      while(head != null){
+          while(head != null && index != k){
+              head = head.next;
+              index++;
+          }
+          // if the length is less then k
+          if(head == null){
+              return dummy.next;
+          }
+
+          if(head.next != null){
+              head.val = head.next.val;
+              head.next = head.next.next;
+          } else {
+              head = null;
+          }
+          index = 0;
+      }
+
+      return dummy.next;
+  }
+  ```
+- Delete nodes with the same value
+  ``` Java
+  public ListNode delete(ListNode head, int val){
+      if(head == null || val < 0){
+          return head;
+      }
+
+      ListNode dummy = new ListNode(0);
+      dummy.next = head;
+
+      while(head != null){
+          if(head.val == val){
+              if(head.next != null){
+                  head.val = head.next.val;
+                  head.next = head.next.next;
+              } else {
+                  head = null;
+              }
+          } else {
+              head = head.next;
+          }
+      }
+      return dummy.next;
+  }
+  ```
+
 
 - Every time, **walk a Linked List**, **define a dummy node before**, let it next be head.
 
@@ -286,7 +409,7 @@ while(<Some condition>){
     }
     return false;
     ```
-  - **get the node which is the i-th node from the end**
+  - **get the node which is the i-th node from the tail**
 - **<div id = "intersection">Intersection <div>**
   ``` Java
   ListNode a = headA;
