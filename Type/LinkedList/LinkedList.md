@@ -40,9 +40,12 @@
   - [Doubly Linked List](#doubly)
     - [Create](#doublyCreate)
 ## <h2 id = "summary">Summary</h2>
+- **Caution！！**
+  - If two pointers point to the same node, they are not same!!
 ### <h3 id = "cornerCase">Corner Case</h3>
 - Linked List is empty;
 - Linked List only have one node
+- Linked list length is enough or not
 ## <h2 id = "basics">Basic Knowlege</h2>
 ### <h3 id = "listNode"> List Node</h3>
 ```Java
@@ -72,8 +75,8 @@ while(<Some condition>){
   * return the new head
   ***/
   public ListNode insertHead(ListNode head, ListNode newNode){
-      if(ListNode == null){
-          return head;
+      if(head == null){
+          return newNode;
       }
 
       newNode.next = head;
@@ -329,6 +332,217 @@ while(<Some condition>){
       return dummy.next;
   }
   ```
+### <h3 id = "singlyFind"> Find nodes in the singly Linked List</h3>
+- Find the middle
+  ``` Java
+  public ListNode findMiddle(ListNode head){
+      if(head == null){
+          return head;
+      }
+
+      ListNode slow = head;
+      ListNode fast = head;
+      while(fast != null && fast.next != null){
+          if(fast.next.next == null){
+              // slow will be the last node of the first part
+          }
+          fast = fast.next.next;
+          slow = slow.next;
+      }
+
+      if(fast == null){
+          // slow will be the first node of second part, the length of the linked list is even
+
+      }
+      if(fast.next == null){
+          // slow will be the middle of the linked list, the length of the linked list is odd
+      }
+  }
+  ```
+    | Fast                  | Slow                              | # of Length |
+    |-----------------------|-----------------------------------|-------------|
+    |fast == null           | the first node of the second part | Even        |
+    |fast.next.next == null | the last node of the first part   | Even        |
+    | fast.next == null     | the middle of the linked List     | Odd         |
+
+- Find the k-th node from the head
+  ``` Java
+  public ListNode find(ListNode head, int k){
+      if(head == null || k < 0){
+          return head;
+      }
+
+      int index = 0;
+      while(head != null && index != k){
+          head = head.next;
+          index++;
+      }
+      if(head == null){
+          return null;
+      }
+      return head;
+  }
+  ```
+- Find the k-th node from the tail
+  ``` Java
+  public ListNode find(ListNode head, int k){
+      if(head == null || k < 0){
+          return head;
+      }
+
+      ListNode fast = head;
+      ListNode slow = head;
+      int index = 0;
+      while(fast != null && index != k){
+          fast = fast.next;
+          index++;
+      }
+      if(fast == null){
+          // the length of the linked list is less than k;
+          return null;
+      }
+
+      while(fast != null){
+          fast = fast.next;
+          slow = slow.next;
+      }
+      return slow;
+  }
+  ```
+### <h3 id = "singlyReverse"> Rever the singly linked list </h3>
+- Reverse all
+  ``` Java
+  public ListNode reverse(ListNode head){
+      if(head == null){
+          return head;
+      }
+
+      ListNode prev = null;
+      while(head != null){
+          ListNode next = head.next;
+          head.next = prev;
+          prev = head;
+          head = next;
+      }
+      return prev;
+  }
+  ```
+- Reverse half
+  ``` Java
+  public ListNode reverse(ListNode head){
+      if(head == null){
+          return head;
+      }
+
+      ListNode prev = new ListNode(0);
+      ListNode dummy = new ListNode(0);
+      ListNode fast = head;
+      ListNode slow = head;
+
+      dummy.next = head;
+      prev = dummy;
+
+      while(fast != null && fast.next != null){
+          fast = fast.next.next;
+          slow = slow.next;
+          prev = prev.next;
+      }
+
+      // here slow will be the first node of the second part or the middle
+
+      while(slow != null){
+          ListNode next = slow.next;
+          slow.next = prev;
+          prev = slow;
+          slow = next;
+      }
+
+      // prev here will be the head of the last node of the list
+      // dummy.next will be the first node of the list
+
+  }
+  ```
+
+  - Reverse in a range
+    ``` Java
+    public ListNode reverse(ListNode head, int m, int n){
+        if(head == null || m > n){
+            return head;
+        }
+
+        ListNode prev = new ListNode(0);
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        prev = dummy;
+
+        int index = 0;
+        while(head != null && index != m){
+            head = head.next;
+            prev = prev.next;
+            index++;
+        }
+        if(head == null){
+            return head;
+        }
+        ListNode pre1 = pre;
+        ListNode head1 = head;
+
+        while(head != null && index != n + 1){
+            ListNode next = head.next;
+            head.next = prev;
+            prev = head;
+            head = next;
+        }
+        prev1.next = prev;
+        head1.next = head;
+
+        return dummy.next;
+    }
+    ```
+  - Reverse in k- group
+    ```Java
+    public ListNode reverse(ListNode head, int k){
+        if(head == null || k < 0){
+            return head;
+        }
+
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        ListNode prev1 = dummy;
+        int index = 0;
+        ListNode prev = prev1;
+        ListNode head1 = head;
+        ListNode next = null;
+        while(head != null){
+            prev1 = prev;
+            head1 = head;
+            ListNode cur = head;
+            while(cur != null && index != k){
+                cur = cur.next;
+                index++;
+            }
+            if(index < k){
+                return dummy.next;
+            }
+            while(head != cur){
+                next = head.next;
+                head.next = prev;
+                prev = head;
+                head = next;
+                index++;
+            }
+
+            prev1.next = prev;
+            head1.next = head;
+            prev = head1;
+
+            index = 0;
+        }
+
+        return dummy.next;
+    }
+    ```
 
 
 - Every time, **walk a Linked List**, **define a dummy node before**, let it next be head.
@@ -378,22 +592,7 @@ while(<Some condition>){
   }
 
   ```
-- **<div id = "slowFast">Slow Fast Two Pointers</div>**
-  - **get the middle of the linkedList**.
-    ``` Java
-    ListNode slow = head;
-    ListNode fast = head;
-    while(fast != null && fast.next != null){
-        fast = fast.next.next;
-        slow = slow.next;
-    }
-    ```
 
-
-    | # of nodes | Fast              | Slow                                  |
-    | ---------- | ----------------- | ------------------------------------- |
-    | Odd        | fast.next => null | Slow => middle                        |
-    | Even       | fast =>null       | Slow => First node of the second part |
 
 
   - **Judge whether a linked List has a cycle**
