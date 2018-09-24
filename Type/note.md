@@ -1,6 +1,7 @@
 ## Content
 - [int](#int)
 - [Integer](#Integer)
+- [Interval](#Interval)
 
 ## <h2 id = "int">int</h2>
 - **Caution!!**
@@ -114,11 +115,22 @@
                 }
             }
 
-- ### intervals
-    + There are two variables, start and end. So we use sort to let one variable under control.
-    + Overlap
+- ## <h2 id = "interval">Interval</h2>
+  ```Java
+  class Interval{
+      public start;
+      public end;
+      public Interval(int start, int end){
+          this.start = start;
+          this.end = end;
+      }
+  }
+  ```
+  1. Using Comparator sort the intervals with the ascending order of the interval's start.
+  2. Merge Interval
+      + If i2.start >= i1.end then merge to a new interval[i1.start, i2.end]
+      + else those two are overlap.
 
-            v1.start > v2.start && v2.start < v1.end
 ## 6. Binary Search
     int start = 0;
     int end = nums.length - 1;

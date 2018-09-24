@@ -1,5 +1,14 @@
 # Heap
-- Implemented by **Priority Queue**
+- [Summary](#summary)
+
+
+## <h2 id = "summary">Summary</h2>
+
+## <h2 id = "application">Application</h2>
+- Dynamically get the max/ min value no matter add or remove any values including the current max/ min value;
+- Get the value with the max priority.
+
+ Implemented by **Priority Queue**
 
 | #   | # of Prob | Status     | Note                                                                      |
 | --- | --------- | ---------- | ------------------------------------------------------------------------- |

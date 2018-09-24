@@ -1,5 +1,6 @@
 # LinkedList
 - [Summary](#summary)
+  - [Corner case](#cornerCase)
 - [Basic Knowledge](#basics)
   - [List Node](#listNode)
   - [Singly Linked List](#singly)
@@ -8,12 +9,15 @@
       - Insert at the head
       - Insert at the end
       - Insert in the middle
+        - Insert in the specific position
+        - Insert every k nodes
+        - Insert in a sorted List
     - [Delete](#singlyDelete)
       - Delete the head
       - Delete the end
       - Delete the middle
       - Deletion in O(1) time complexity
-      - Delete any k nodes
+      - Delete every k nodes
       - Delete nodes with the same value
     - [Find](#singlyFind)
       - Find the middle
@@ -36,7 +40,9 @@
   - [Doubly Linked List](#doubly)
     - [Create](#doublyCreate)
 ## <h2 id = "summary">Summary</h2>
-
+### <h3 id = "cornerCase">Corner Case</h3>
+- Linked List is empty;
+- Linked List only have one node
 ## <h2 id = "basics">Basic Knowlege</h2>
 ### <h3 id = "listNode"> List Node</h3>
 ```Java
@@ -98,6 +104,78 @@ while(<Some condition>){
   }
   ```
 - Insert in the middle
+  - Insert in a specific position
+  ```Java
+  /***
+  * head: the head of the original list
+  * newNode: the node need to insert
+  * pos: the position to insert
+  * return the head of the list
+  ***/
+  public ListNode insert(ListNode head, ListNode newNode, int pos){
+      if(head == null){
+          return newNode;
+      }
+      if(newNode == null){
+          return head;
+      }
+
+      ListNode dummy = new ListNode(0);
+      dummy.next = head;
+
+      int index = 0;
+      ListNode prev = dummy;
+      // case 1: pos < length;
+      // case 2: pos >= length, insert at the end;
+      while(index != pos && head != null){
+          prev = head;
+          head = head.next;
+      }
+      prev.next = newNode;
+      newNode.next = head;
+      return dummy.next;
+  }
+  ```
+  - Insert every k nodes
+  ``` Java
+  /***
+  * head : the head of the original node
+  * newVal : the val to insert
+  * k: every k node to insert
+  * return the head of the list
+  ***/
+  public ListNode insert(ListNode head, int newVal, int k){
+      // case 1: list is empty => return null
+      // case 2: list does not have enough length => return null / insert here
+      // case 3: enough but has a tail
+      if(head == null){
+          return null;
+      }
+      if(k < 0){
+          return head;
+      }
+
+      ListNode dummy = new ListNode(0);
+      dummy.next = head;
+      ListNdoe prev = dummy;
+      while(head != null){
+          int i = 0;
+          while(i < k && head != null){
+              prev = head;
+              head = head.next;
+              i++;
+          }
+          ListNode newNode = new ListNode(newVal);
+          prev.next = newNode;
+          newNode.next = head;
+
+          if(head == null){
+              return dummy.next;
+          }
+      }
+      return dummy.next;
+  }
+  ```
   - Insert a new node in a sorted List
   ```Java
   public ListNode insert(ListNode head, ListNode newNode){
@@ -129,6 +207,7 @@ while(<Some condition>){
 
   }
   ```
+
 - Every time, **walk a Linked List**, **define a dummy node before**, let it next be head.
 
 - **<div id = "delete">Delete</h2>**

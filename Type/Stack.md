@@ -1,4 +1,23 @@
 # Stack
+- [Sumamry](#summary)
+- [Procedure](#procedure)
+- [Application](#application)
+
+## <h2 id = "summary">Summary</h2>
+- Using **Interface Deque** and **Class ArrayDeque** for stack instead of **class Stack**.
+
+## <h2 id = "procedure">Procedure</h2>
+- Find out the trigger
+- Find out what and what type will push into the stack
+- Traversal the container until the trigger then pop
+- Clear the stack
+
+## <h2 id = "application">Application</h2>
+- Trigger: When trigger happens, pop the stack, otherwish push.
+  - Operation from left -> right/ right -> left
+  - Monotone Stack
+- Using Stack to replace Recursion
+
 | #   | # problem | Status    | Type                 | Note                                                            |
 | --- | --------- | --------- | -------------------- | --------------------------------------------------------------- |
 | 1   | 682       | Completed | General              | note.Integer                                                    |
