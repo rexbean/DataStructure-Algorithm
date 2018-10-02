@@ -2,6 +2,10 @@
 - [int](#int)
 - [Integer](#Integer)
 - [Interval](#Interval)
+- [Add](#add)
+- [RemoveDuplicate](#removeDuplicate)
+- [K most Frequent](#kFrequent)
+- [Intersection](#intersection)
 
 ## <h2 id = "int">int</h2>
 - **Caution!!**
@@ -13,7 +17,7 @@
 - int => double
   - If one of the operator is double, the result is double
   - Using explicit type conversion.
-    ``` Java
+    ``` java
     int a, b;
     (double) a/b;
     ```
@@ -116,7 +120,7 @@
             }
 
 - ## <h2 id = "interval">Interval</h2>
-  ```Java
+  ```java
   class Interval{
       public start;
       public end;
@@ -509,9 +513,9 @@
         }
 
 ## 18. Stack
-- Java doesn't have the Interface of Stack. it just has a class named Stack(Java.util.Stack), it is extended by Vector. This implementation is synchronous ans slow. It will always be implemented by **ArrayDeque** or **LinkedList**
+- java doesn't have the Interface of Stack. it just has a class named Stack(java.util.Stack), it is extended by Vector. This implementation is synchronous ans slow. It will always be implemented by **ArrayDeque** or **LinkedList**
 - **Constructor**
-  ``` Java
+  ``` java
   Deque<> stack = new ArrayDeque<>();  // when it always insert or delete the head or tail
   Deque<> stack = new LinkedList<>(); // when it always insert or delete the value in the middle
   ```
@@ -533,7 +537,7 @@
 
 ## 19. Queue
 - **Constructor**
-  ```Java
+  ```java
   Queue<> queue = new LinkedList<>();
   ```
 - **Method**
@@ -609,7 +613,7 @@
     }
 
 ## merge k sorted array / lists / Intervals(Using priorityQueue)
-  ``` Java
+  ``` java
   if(lists == null || lists.length == 0){
       return null;
   }
@@ -646,7 +650,13 @@
   ```
 
 ## <h2 id = "add">Add</h2>
-  ``` Java
+  ``` java
+  // get two digits;
+  // compute the sum;
+  // reset the carry;
+  // compute the new carry;
+  // set the digit;
+  // refresh two numbers;
   while(num1 != end || num2 != end){
       int first = num1[i].exists() ? num1[i] : 0;
       int sec = nums2[i].exists() ? num2[i] : 0;
@@ -668,7 +678,7 @@
   }
   ```
 
-## <h2 id = "kFrequency">Top k Frequent</h2>
+## <h2 id = "kFrequent">Top k Frequent</h2>
 ## <h2 id = "removeDuplicate">Remove Duplicate</h2>
 1. Using HashSet/HashMap on input or candidate output.
 2. Using while loop
@@ -685,7 +695,7 @@
 - Use **two pointer**(Time: O(nlog(n)), Space: O(1))
 
   **Integers => sort + two pointers**
-  ``` Java
+  ``` java
   Arrays.sort(<firstContainer>);
   Arrays.sort(<secContainer>);
   while(i < <first>.size()

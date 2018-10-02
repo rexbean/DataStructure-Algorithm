@@ -31,6 +31,8 @@
     - [Merge](#singlyMerge)
       - Merge two sorted Linked List
       - Merge K sorted Linked List
+    - [Cycle](#singlyCycle)
+    - [Intersection](#singlyIntersection)
     - [Circular Singly Linked List](#singlyCircular)
       - Create
       - Insert
@@ -48,7 +50,7 @@
 - Linked list length is enough or not
 ## <h2 id = "basics">Basic Knowlege</h2>
 ### <h3 id = "listNode"> List Node</h3>
-```Java
+```java
 class ListNode{
     public int val;
     public ListNode next;
@@ -58,7 +60,7 @@ class ListNode{
 }
 ```
 ### <h3 id = "singlyCreate"> Create a Singly Linked List</h3>
-```Java
+```java
 ListNode dummy = new ListNode(0);
 ListNode cur = dummy;
 while(<Some condition>){
@@ -68,7 +70,7 @@ while(<Some condition>){
 ```
 ### <h3 id = "singlyInsert"> Insert nodes into the singly Linked List</h3>
 - Insert at the head
-  ```Java
+  ```java
   /***
   * head the head of the original list
   * newNode the new node need to insert
@@ -84,7 +86,7 @@ while(<Some condition>){
   }
   ```
 - Insert at the tail
-  ```Java
+  ```java
   /***
   * head: the head of the original Linked List
   * newNode: the node need to insert
@@ -108,7 +110,7 @@ while(<Some condition>){
   ```
 - Insert in the middle
   - Insert in a specific position
-  ```Java
+  ```java
   /***
   * head: the head of the original list
   * newNode: the node need to insert
@@ -140,7 +142,7 @@ while(<Some condition>){
   }
   ```
   - Insert every k nodes
-  ``` Java
+  ``` java
   /***
   * head : the head of the original node
   * newVal : the val to insert
@@ -180,7 +182,7 @@ while(<Some condition>){
   }
   ```
   - Insert a new node in a sorted List
-  ```Java
+  ```java
   public ListNode insert(ListNode head, ListNode newNode){
       if(head == null){
           return newNode;
@@ -212,7 +214,7 @@ while(<Some condition>){
   ```
 ### <h3 id = "singlyDelete"> Delete nodes from the singly Linked List</h3>
 - Delete the head
-  ``` Java
+  ``` java
   public ListNode deleteHead(ListNode head){
       if(head == null){
           return head;
@@ -222,7 +224,7 @@ while(<Some condition>){
   }
   ```
 - Delete the tail
-  ``` Java
+  ``` java
   public ListNode deleteTail(ListNode head){
       if(head == null){
           return head;
@@ -239,7 +241,7 @@ while(<Some condition>){
   }
   ```
 - Delete the middle
-  ``` Java
+  ``` java
   /***
   * head : The head of the linked list
   * pos : the position need to delete
@@ -276,7 +278,7 @@ while(<Some condition>){
   ```
 
 - Delete every k nodes
-  ``` Java
+  ``` java
   public ListNode delete(ListNode head, int k){
       if(head == null || k < 0){
           return head;
@@ -308,7 +310,7 @@ while(<Some condition>){
   }
   ```
 - Delete nodes with the same value
-  ``` Java
+  ``` java
   public ListNode delete(ListNode head, int val){
       if(head == null || val < 0){
           return head;
@@ -334,7 +336,7 @@ while(<Some condition>){
   ```
 ### <h3 id = "singlyFind"> Find nodes in the singly Linked List</h3>
 - Find the middle
-  ``` Java
+  ``` java
   public ListNode findMiddle(ListNode head){
       if(head == null){
           return head;
@@ -366,7 +368,7 @@ while(<Some condition>){
     | fast.next == null     | the middle of the linked List     | Odd         |
 
 - Find the k-th node from the head
-  ``` Java
+  ``` java
   public ListNode find(ListNode head, int k){
       if(head == null || k < 0){
           return head;
@@ -384,7 +386,7 @@ while(<Some condition>){
   }
   ```
 - Find the k-th node from the tail
-  ``` Java
+  ``` java
   public ListNode find(ListNode head, int k){
       if(head == null || k < 0){
           return head;
@@ -409,9 +411,9 @@ while(<Some condition>){
       return slow;
   }
   ```
-### <h3 id = "singlyReverse"> Rever the singly linked list </h3>
+### <h3 id = "singlyReverse"> Reverse the singly linked list </h3>
 - Reverse all
-  ``` Java
+  ``` java
   public ListNode reverse(ListNode head){
       if(head == null){
           return head;
@@ -428,7 +430,7 @@ while(<Some condition>){
   }
   ```
 - Reverse half
-  ``` Java
+  ``` java
   public ListNode reverse(ListNode head){
       if(head == null){
           return head;
@@ -464,7 +466,7 @@ while(<Some condition>){
   ```
 
   - Reverse in a range
-    ``` Java
+    ``` java
     public ListNode reverse(ListNode head, int m, int n){
         if(head == null || m > n){
             return head;
@@ -500,7 +502,7 @@ while(<Some condition>){
     }
     ```
   - Reverse in k- group
-    ```Java
+    ```java
     public ListNode reverse(ListNode head, int k){
         if(head == null || k < 0){
             return head;
@@ -543,74 +545,101 @@ while(<Some condition>){
         return dummy.next;
     }
     ```
+### <h3 id = "Merge">Merge Linked List</h3>
+- Merge 2 Sorted List (two pointers)
+  ``` java
+  public ListNode merge(ListNode l1, ListNode l2){
+      if(l1 == null){
+          return l2;
+      }
+      if(l2 == null){
+          return l1;
+      }
 
+      ListNode dummy = new ListNode(0);
+      ListNode cur = dummy;
 
-- Every time, **walk a Linked List**, **define a dummy node before**, let it next be head.
-
-- **<div id = "delete">Delete</h2>**
-  - **After deleted, do not jump to next node! Judge the new next first!**
-
-  ```Java
-  if(current.next.val == val){
-      current.next = current.next.next;
-  } else {
-      current = current.next;
+      while(l1 != null && l2 != null){
+          if(l1.val > l2.val){
+              cur.next = new ListNode(l2.val);
+              l2 = l2.next;
+          } else {
+              cur.next = new ListNode(l1.val);
+              l1 = l1.next;
+          }
+          cur = cur.next;
+      }
+      while(l1 != null){
+          cur.next = new ListNode(l1.next);
+          cur = cur.next;
+          l1 = l1.next;
+      }
+      while(l2 != null){
+          cur.next= new ListNode(l2.next);
+          cur = cur.next;
+          l2 = l2.next;
+      }
+      return dummy.next;
   }
   ```
-- **<div id ="reverse">Reverse</div>**
-  - Reverse all
+- Merge k sorted Linke List
+  ``` java
+  /***
+  * lists: k sorted Linked List
+  * k : the number of the linked list
+  * reutrn the new head of the list
+  */
+  public ListNode mergeKList(ListNode[] lists, int k){
+      if(lists == null || lists.length == 0){
+          return null;
+      }
 
-  ```Java
-  ListNode pre = null;
-  ListNode cur = head;
-  while(head != null){
-      ListNode next = head.next;
-      head.next = pre;
-      pre = head;
-      head = next;
+      ListNode dummy = new ListNode(0);
+      ListNode cur = dummy;
+
+      Comparator<ListNode> comparator = new Comparator<>(){
+          @Override
+          public int compare(ListNode l1, ListNode l2){
+              return l1.val - l2.val;
+          }
+      }
+      PriorityQueue<ListNode> heap = new PriorityQueue<>(k, comparator);
+
+      for(ListNode n : lists){
+          if(n != null){
+              heap.offer(n);
+          }
+
+      }
+
+      while(!heap.isEmpty()){
+          ListNode temp = heap.poll();
+          cur.next = new ListNode(temp.val);
+          cur = cur.next;
+
+          if(temp.next != null){
+              heap.offer(temp.next);
+          }
+      }
+      return dummy.next;
+
   }
   ```
-  - Reverse node in a range
-
-  ``` Java
-  // now current is the first node need to be reversed
-  // pre is the node before the current;
-  // right is the index of the last node need to be reversed
-  ListNode pre1 = pre;
-  ListNode head1 = head;
-  while(current != null && currentIndex != right + 1){
-      ListNode next = current.next;
-      current.next = pre;
-      pre = current;
-      current = next;
+### <h3 id = "singlyCycle"> Whether a singly linked list has a cycle</h3>
+  ``` java
+  ListNode slow = head;
+  ListNode fast = head;
+  while(fast != null && fast.next != null){
+      fast = fast.next.next;
+      slow = slow.next;
+      if(slow == fast){
+          return true;
+      }
   }
-  pre1.next = pre;
-  head1.next = current;
-  // !!! do not forget let the pre be the node before the head!!
-  while(pre.next != head){
-      pre = pre.next;
-  }
-
+  return false;
   ```
-
-
-
-  - **Judge whether a linked List has a cycle**
-    ``` Java
-    ListNode slow = head;
-    ListNode fast = head;
-    while(fast != null && fast.next != null){
-        fast = fast.next.next;
-        slow = slow.next;
-        if(slow == fast){
-            return true;
-        }
-    }
-    return false;
-    ```
-  - **get the node which is the i-th node from the tail**
-- **<div id = "intersection">Intersection <div>**
-  ``` Java
+### <h3 id = "singlyIntersection"> Find the intersection of the singly linkedList</h3>
+  ``` java
   ListNode a = headA;
   ListNode b = headB;
   while(a != b){
@@ -618,8 +647,10 @@ while(<Some condition>){
       b = b == null? headA : b.next;
   }
   return a;
-
   ```
+
+
+
 | #   | # of prob | Status     | Type                    | Note                                                                           |
 | --- | --------- | ---------- | ----------------------- | ------------------------------------------------------------------------------ |
 | 1   | 206       | Completed  | Reverse all             | [Reverse](#reverse)                                                            |
@@ -637,3 +668,4 @@ while(<Some condition>){
 | 13  | 143       | Completed  | Reverse                 | [Reverse](#reverse), it can reverse the second half                            |
 | 14  | 160       | Completed  | Intersection            | [Intersection](#intersection)                                                  |
 | 15  | 817       | Completed  | Connectivity            |                                                                                |
+| 16  | 24        | Completed  |                         |                                                                                |

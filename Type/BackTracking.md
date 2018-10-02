@@ -5,6 +5,7 @@
 
 ## <h2 id = "summary">Summary</h2>
 - **Caution!!**
+  - Think about what will the helper do first.
   - Pay attention to the duplicate
   - When using start variable, the loop variable is **i not start**
 - Remove Duplicate
@@ -44,5 +45,6 @@
 | 8   | 47        | Completed  |                                                                             |
 | 9   | 90        | Completed  | Duplicate of Combination                                                    |
 | 10  | 131       | Completed  | Cut String                                                                  |
-| 11  | 320       | To be Done | Contatate                                                                            |
-|     |           |            |                                                                             |
+| 11  | 320       | To be Done | Contatate                                                                   |
+| 12  | 351       | Completed  | find the next way                                                           |
+| 13  | 301       | Completed  | do the helper twice, first from left to right do remove invalid ), then reverse to remove (                                                                            |

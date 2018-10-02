@@ -12,10 +12,13 @@
   }
   ```
 
-| #   | # of Prob | Status     | Type       | Note                                                                          |
-| --- | --------- | ---------- | ---------- | ----------------------------------------------------------------------------- |
-| 1   | 53        | Completed  | Prefix Sum | 1. [prefixSum](#prefixSum)<br> 2. max subArray => Math.max(max, preSum - min) |
-| 2   | 560       | To be Done | Prefix Sum |                                                                               |
-| 3   | 561       | Completed  | -          | The larger one will be hidden, so using the second large to hide it.          |
-| 4   | 66        | Completed  | Add        | [Note.add](https://github.com/rexbean/L/blob/master/Type/note.md#add)         |
-| 5   | 122       | Completed  | Math       | profit = sumOf(sell - buy), when sell > buy                                                                              |
+| #   | # of Prob | Status     | Type                                                              | Note                                                                          |
+| --- | --------- | ---------- | ----------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| 1   | 53        | Completed  | Prefix Sum                                                        | 1. [prefixSum](#prefixSum)<br> 2. max subArray => Math.max(max, preSum - min) |
+| 2   | 560       | To be Done | Prefix Sum                                                        |                                                                               |
+| 3   | 561       | Completed  | -                                                                 | The larger one will be hidden, so using the second large to hide it.          |
+| 4   | 66        | Completed  | Add                                                               | [Note.add](https://github.com/rexbean/L/blob/master/Type/note.md#add)         |
+| 5   | 122       | Completed  | Math                                                              | profit = sumOf(sell - buy), when sell > buy                                   |
+| 6   | 31        | Completed  | Find the rule                                                     |                                                                               |
+| 7   | 442       | Completed  | Flip the nums[nums[i]], if it already negative, it appeared twice |                                                                               |
+| 8   | 495       | Completed  | Merge interval                                                                  |                                                                               |
