@@ -687,14 +687,16 @@
         i++;
     }
     ```
-## <h2 id = "intersection">Intersection<h2>
-- Use Set/Array (Time: O(n), Space:O(n)) [HasMap](https://github.com/rexbean/L/blob/master/Type/HashMap/HashMap.md#intersection)
 
-  1. **String / Small difference integer ? array : HashSet**
+## <h2 id = "intersection">Intersection<h2>
+- Use Set/Array (Time: O(n), Space:O(2n)) [HashMap](https://github.com/rexbean/L/blob/master/Type/HashMap/HashMap.md#intersection)
+
+  1. **String / Small difference integer ? array : HashSet** 
   2. **Amounts equal ? HashMap : HashSet**
-- Use **two pointer**(Time: O(nlog(n)), Space: O(1))
+- Use **two pointer**(Time: O(nlog(n)), Space: O(n))
 
   **Integers => sort + two pointers**
+  
   ``` java
   Arrays.sort(<firstContainer>);
   Arrays.sort(<secContainer>);
@@ -712,4 +714,4 @@
         }
   }
   ```
-- Use Binary Search
+- Use Binary Search(Time: O(nlog(n)), Space: O(n))
