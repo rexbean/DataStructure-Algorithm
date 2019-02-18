@@ -126,11 +126,12 @@
     ```
   - **<h3 id = "deleteNode">Delete a node<h3>**
   - Conditions
-      | Condition          | Operation                 |
-      | ------------------ | ------------------------- |
-      | Have no children   | parent.child = null       |
-      | Have one children  | parent.child = node.child |
-      | Have two childrent | node.val = sucessor.val<br> successor' parent.child = sucessor.child                          |
+  
+  | Condition          | Operation                 |
+  | ------------------ | ------------------------- |
+  | Have no children   | parent.child = null       |
+  | Have one children  | parent.child = node.child |
+  | Have two childrent | node.val = sucessor.val<br> successor' parent.child = sucessor.child                          |
   - Implementation
     ``` Java
     private void delete(Node root, Node n){
