@@ -14,12 +14,13 @@
 - If the element is a char or a integer, array can be used instead of the hashmap.
 - Type
   - <div id = "existing">Existing</div>
+  
     - count: the number of element' type which does not in the window
     - count = map.size();
     - when map.get(element == 0) ==> count --;
     - when count == 0, left pointer move
     - when map.get(element > 0) ==> count ++;
-  - <dic id ="interval">Interval</div>
+  - <div id ="interval">Interval</div>
 - Template
 ```Java
   //Initialize an array or a hash map
