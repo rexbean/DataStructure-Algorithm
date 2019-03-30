@@ -11,6 +11,8 @@
       // do something with prefix Sum
   }
   ```
+- An array has length of n, has n sub array.
+- // TODO: Two demensional array indices: main diagnal:  
 
 | #   | # of Prob | Status     | Type                                                              | Note                                                                          |
 | --- | --------- | ---------- | ----------------------------------------------------------------- | ----------------------------------------------------------------------------- |
