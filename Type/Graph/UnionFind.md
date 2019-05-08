@@ -12,7 +12,7 @@
 ## <h2 id = "summary">Sumamry</h2>
 - **Caution!!!**
   - the value in uf.id[] does not the eventual parent, it should use root to get.
-  - **Union Find can just used inth undirected graph**
+  - **Union Find can just used in the undirected graph**
   - Union Find should do union with the processing going.
 ## <h2 id = "application">Application</h2>
 - Union Find can used to test the connectivity between nodes;
