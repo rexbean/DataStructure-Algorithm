@@ -267,7 +267,7 @@ while(<Some condition>){
       // if head is not the tail then delete
       // this method can do the Deletion in O(1) time complexity
       if(head.next != null){
-          head = head.next.val;
+          head.val = head.next.val;
           head.next = head.next.next;
       } else {
           // if it is the tail then let it be null;
