@@ -33,12 +33,13 @@
       - Merge K sorted Linked List
     - [Cycle](#singlyCycle)
     - [Intersection](#singlyIntersection)
-    - [Circular Singly Linked List](#singlyCircular)
-      - Create
-      - Insert
+    - [Cyclic Singly Linked List](#singlyCyclic)
+      - [Create](#singlyCyclicCreate)
+      - [Insert](#singlyCyclicInsert)
         - Insert in particular position
-      - Delete
-      - Find
+      - [Delete](#singlyCyclicDelete)
+      - [Find](#singlyCyclicFind)
+      - [Reverse](#singlyCyclicReverse)
   - [Doubly Linked List](#doubly)
     - [Create](#doublyCreate)
 ## <h2 id = "summary">Summary</h2>
@@ -59,7 +60,8 @@ class ListNode{
     }
 }
 ```
-### <h3 id = "singlyCreate"> Create a Singly Linked List</h3>
+### <h3 id = "singly">Single Linked List</h3>
+#### <h4 id = "singlyCreate"> Create a Singly Linked List</h4>
 ```java
 ListNode dummy = new ListNode(0);
 ListNode cur = dummy;
@@ -68,7 +70,7 @@ while(<Some condition>){
     cur = cur.next;
 }
 ```
-### <h3 id = "singlyInsert"> Insert nodes into the singly Linked List</h3>
+#### <h4 id = "singlyInsert"> Insert nodes into the singly Linked List</h4>
 - Insert at the head
   ```java
   /***
@@ -212,7 +214,7 @@ while(<Some condition>){
 
   }
   ```
-### <h3 id = "singlyDelete"> Delete nodes from the singly Linked List</h3>
+#### <h4 id = "singlyDelete"> Delete nodes from the singly Linked List</h4>
 - Delete the head
   ``` java
   public ListNode deleteHead(ListNode head){
@@ -334,7 +336,7 @@ while(<Some condition>){
       return dummy.next;
   }
   ```
-### <h3 id = "singlyFind"> Find nodes in the singly Linked List</h3>
+#### <h4 id = "singlyFind"> Find nodes in the singly Linked List</h4>
 - Find the middle
   ``` java
   public ListNode findMiddle(ListNode head){
@@ -411,7 +413,7 @@ while(<Some condition>){
       return slow;
   }
   ```
-### <h3 id = "singlyReverse"> Reverse the singly linked list </h3>
+#### <h4 id = "singlyReverse"> Reverse the singly linked list </h4>
 - Reverse all
   ``` java
   public ListNode reverse(ListNode head){
@@ -465,87 +467,87 @@ while(<Some condition>){
   }
   ```
 
-  - Reverse in a range
-    ``` java
-    public ListNode reverse(ListNode head, int m, int n){
-        if(head == null || m > n){
-            return head;
-        }
+- Reverse in a range
+  ``` java
+  public ListNode reverse(ListNode head, int m, int n){
+      if(head == null || m > n){
+          return head;
+      }
 
-        ListNode prev = new ListNode(0);
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
-        prev = dummy;
+      ListNode prev = new ListNode(0);
+      ListNode dummy = new ListNode(0);
+      dummy.next = head;
+      prev = dummy;
 
-        int index = 0;
-        while(head != null && index != m){
-            head = head.next;
-            prev = prev.next;
-            index++;
-        }
-        if(head == null){
-            return head;
-        }
-        ListNode pre1 = pre;
-        ListNode head1 = head;
+      int index = 0;
+      while(head != null && index != m){
+          head = head.next;
+          prev = prev.next;
+          index++;
+      }
+      if(head == null){
+          return head;
+      }
+      ListNode pre1 = pre;
+      ListNode head1 = head;
 
-        while(head != null && index != n + 1){
-            ListNode next = head.next;
-            head.next = prev;
-            prev = head;
-            head = next;
-        }
-        prev1.next = prev;
-        head1.next = head;
+      while(head != null && index != n + 1){
+          ListNode next = head.next;
+          head.next = prev;
+          prev = head;
+          head = next;
+      }
+      prev1.next = prev;
+      head1.next = head;
 
-        return dummy.next;
-    }
-    ```
-  - Reverse in k- group
-    ```java
-    public ListNode reverse(ListNode head, int k){
-        if(head == null || k < 0){
-            return head;
-        }
+      return dummy.next;
+  }
+  ```
+- Reverse in k- group
+  ```java
+  public ListNode reverse(ListNode head, int k){
+      if(head == null || k < 0){
+          return head;
+      }
 
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
+      ListNode dummy = new ListNode(0);
+      dummy.next = head;
 
-        ListNode prev1 = dummy;
-        int index = 0;
-        ListNode prev = prev1;
-        ListNode head1 = head;
-        ListNode next = null;
-        while(head != null){
-            prev1 = prev;
-            head1 = head;
-            ListNode cur = head;
-            while(cur != null && index != k){
-                cur = cur.next;
-                index++;
-            }
-            if(index < k){
-                return dummy.next;
-            }
-            while(head != cur){
-                next = head.next;
-                head.next = prev;
-                prev = head;
-                head = next;
-                index++;
-            }
+      ListNode prev1 = dummy;
+      int index = 0;
+      ListNode prev = prev1;
+      ListNode head1 = head;
+      ListNode next = null;
+      while(head != null){
+          prev1 = prev;
+          head1 = head;
+          ListNode cur = head;
+          while(cur != null && index != k){
+              cur = cur.next;
+              index++;
+          }
+          if(index < k){
+              return dummy.next;
+          }
+          while(head != cur){
+              next = head.next;
+              head.next = prev;
+              prev = head;
+              head = next;
+              index++;
+          }
 
-            prev1.next = prev;
-            head1.next = head;
-            prev = head1;
+          prev1.next = prev;
+          head1.next = head;
+          prev = head1;
 
-            index = 0;
-        }
+          index = 0;
+      }
 
-        return dummy.next;
-    }
-    ```
-### <h3 id = "Merge">Merge Linked List</h3>
+      return dummy.next;
+  }
+  ```
+#### <h4 id = "Merge">Merge Linked List</h4>
 - Merge 2 Sorted List (two pointers)
   ``` java
   public ListNode merge(ListNode l1, ListNode l2){
@@ -625,7 +627,7 @@ while(<Some condition>){
 
   }
   ```
-### <h3 id = "singlyCycle"> Whether a singly linked list has a cycle</h3>
+#### <h4 id = "singlyCycle"> Whether a singly linked list has a cycle</h4>
   ``` java
   ListNode slow = head;
   ListNode fast = head;
@@ -638,7 +640,7 @@ while(<Some condition>){
   }
   return false;
   ```
-### <h3 id = "singlyIntersection"> Find the intersection of the singly linkedList</h3>
+#### <h4 id = "singlyIntersection"> Find the intersection of the singly linkedList</h4>
   ``` java
   ListNode a = headA;
   ListNode b = headB;
@@ -648,8 +650,97 @@ while(<Some condition>){
   }
   return a;
   ```
+### <h3 id = "singlyCyclic">Cyclic Linked List</h3>
+#### <h4 id = "singlyCyclicCreate">Create</h4>
+```java
+  ListNode dummy = new ListNode(0);
+  ListNode cur = dummy;
+  while(<some condition>){
+    cur.next = new ListNode();
+    cur = cur.next;
+  }
+  cur.next = dummy.next;
+  return dummy.next;
+```
+#### <h4 id = "singlyCyclicInsertion">Insert</h4>
+##### Insert in a sorted linked list
+###### **Corner case**
+  - head == null
+  - head.next == head (only one node)
+  - duplicate value
+###### Stages
+  - climbing stage
+  - cliff
+```java
+public ListNode insert(ListNode head, int insertVal){
+    // head == null
+    if(head == null){
+        head = new ListNode(insertVal);
+        head.next = head;
+        return head;
+    }
 
+    // head.next == head
+    if(head.next == head){
+        head.next = new ListNode(insertVal);
+        head.next.next = head;
+        return head;
+    }
 
+    ListNode dummy = new ListNode(0);
+    dummy.next = head;
+    head = head.next;
+    while(head != dummy.next){
+        // climbing & duplicate
+        if(head.val <= insertVal && head.next.val >= insertVal){
+            break;
+        }
+        // cliff
+        if(head.val > head.next.val && (head.next.val > insertVal || head.val < insertVal)){
+            break;
+        }
+        head = head.next;
+    }
+
+    ListNode next = head.next;
+    head.next = new ListNode(insertVal);
+    head.next.next = next;
+
+    return dummy.next;
+  }
+}
+```
+#### <h4 id = "singlyCyclicReverse">Reverse</h4>
+```java
+public ListNode reverse(ListNode head){
+    if(head_ref == null){
+        return head_ref;
+    }
+
+    if(head_ref.next == head_ref) {
+        return head_ref;
+    }
+
+    ListNode dummy = new ListNode(0);
+    dummy.next = head_ref;
+
+    ListNode sec = head_ref.next;
+    head_ref = sec;
+
+    ListNode pre = null;
+    while(head_ref != dummy.next){
+        ListNode next = head_ref.next;
+        head_ref.next = pre;
+        pre = head_ref;
+        head_ref = next;
+    }
+
+    head_ref.next = pre;
+    sec.next = head_ref;
+    return dummy.next;
+}
+
+```
 
 | #   | # of prob | Status     | Type                    | Note                                                                           |
 | --- | --------- | ---------- | ----------------------- | ------------------------------------------------------------------------------ |
