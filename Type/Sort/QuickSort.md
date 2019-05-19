@@ -38,7 +38,11 @@ public static int partition1(int[] nums, int low, int high){
 
 
 public static int partition2(int[] nums, int low, int high){
-    int pivot = nums[low];
+    // random can make it faster!!!
+    Random random = new Random();
+    int p = left + random.nextInt(high - low);
+    swap(nums, left, p);
+    int pivot = nums[left];
     // 3,8,5,6,7,4,2,1
     int l = low ;
     int r = high;

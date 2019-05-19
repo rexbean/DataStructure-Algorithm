@@ -143,7 +143,7 @@ public void selectionSort(int[] nums){
 
   ```
 
-## Heap Sort
+## <h2 id = "heapSort">Heap Sort</h2>
 - See [Heap](../Heap.md/#heapSort)
 
 ## Bucket Sort
