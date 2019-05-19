@@ -83,64 +83,63 @@ public void selectionSort(int[] nums){
       }
   }
   ```
-## <div id ="quickSort">Quick Sort</div>
-### Definition
--
 ## Merge Sort
 - Definition
 - Implementation
   ```java
   public int[] mergeSort(int[] nums){
 
-      helper(0, nums.length - 1, nums);
-      return nums;
-  }
+        helper(0, nums.length - 1, nums);
+        return nums;
+    }
 
-  private void helper(int left, int right, int[] nums){
-      if(left >= right){
-          return;
-      }
-      int mid = left + (right - left) / 2;
-      helper(left, mid, nums);
-      helper(mid + 1, right, nums);
-      merge(left, mid, right, nums);
-  }
+    private void helper(int left, int right, int[] nums){
 
-  private void merge(int start, int mid, int end, int[] nums){
-      int[] temp = new int[end - start + 1];
-      int left = start;
-      int right = mid;
-      int end1 = right + 1;
-      int end2 = end + 1;
-      int index = 0;
-      while(left < end1 && right < end2){
-          if(nums[left] < nums[right]){
-              temp[index] = nums[left];
-              left++;
-          } else {
-              temp[index] = nums[right];
-              right++;
-          }
-          index++;
-      }
+        if(left >= right){
+            return;
+        }
+        int mid = left + (right - left) / 2;
+        helper(left, mid, nums);
+        helper(mid + 1, right, nums);
+        merge(left, mid, right, nums);
+    }
 
-      while(left < end1){
-          temp[index] = nums[left];
-          index++;
-          left++;
-      }
+    private void merge(int start, int mid, int end, int[] nums){
+        int[] temp = new int[end - start + 1];
+        int left = start;
+        int right = mid + 1;
 
-      while(right < end2){
-          temp[index] = nums[right];
-          index++;
-          right++;
-      }
+        int end1 = right;
+        int end2 = end + 1;
 
-      index = 0;
-      for(int i = start; i < end; i++){
-          nums[i] = temp[index++];
-      }
-  }
+        int index = 0;
+        while(left < end1 && right < end2){
+            if(nums[left] < nums[right]){
+                temp[index] = nums[left];
+                left++;
+            } else {
+                temp[index] = nums[right];
+                right++;
+            }
+            index++;
+        }
+
+        while(left < end1){
+            temp[index] = nums[left];
+            index++;
+            left++;
+        }
+        while(right < end2){
+            temp[index] = nums[right];
+            index++;
+            right++;
+        }
+
+        index = 0;
+        for(int i = start; i <= end; i++){
+            nums[i] = temp[index++];
+        }
+    }
 
   ```
 

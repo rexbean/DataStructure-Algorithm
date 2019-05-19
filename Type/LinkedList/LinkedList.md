@@ -43,8 +43,10 @@
   - [Doubly Linked List](#doubly)
     - [Create](#doublyCreate)
 ## <h2 id = "summary">Summary</h2>
-- **Caution！！**
+### **Caution！！**
   - If two pointers point to the same node, they are not same!!
+  - When a new node will be added then a **pre** node will be needed!
+  - When modifing the structure of the linked list, do not forget to **let the last node points to null**
 ### <h3 id = "cornerCase">Corner Case</h3>
 - Linked List is empty;
 - Linked List only have one node

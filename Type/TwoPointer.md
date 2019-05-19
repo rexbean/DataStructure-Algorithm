@@ -35,7 +35,7 @@
 - **<h3 id ="separating">Separating</h3>**
 
   - **Keep Order(Same Direction)**
-
+  **This can only keep the first part's order!**
     ``` Java
     int left = 0;
     int right = 0;
