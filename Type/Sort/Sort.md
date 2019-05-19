@@ -144,6 +144,6 @@ public void selectionSort(int[] nums){
   ```
 
 ## Heap Sort
-- See [Heap](.../Heap.md/#heapSort)
+- See [Heap](../Heap.md/#heapSort)
 
 ## Bucket Sort
