@@ -1,7 +1,19 @@
 # Heap
 - [Summary](#summary)
 - [Basics](#basics)
-- [Reference](#https://www.cs.cmu.edu/~adamchik/15-121/lectures/Binary%20Heaps/heaps.html)
+  - [Definition and Property](#definition)
+  - [Operations](#operations)
+    - [Shift Up](#shiftup)
+    - [Shift Down](#shiftDown)
+    - [Push](#push)
+    - [Remove](#remove)
+      - [Pop](#pop)
+      - [Remove others](#removeOthers)
+    - [Replace](#replace)
+    - [Search](#search)
+    - [Build Heap](#buildHeap)
+    - [Heap Sort](#heapSort)
+- [Reference](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Binary%20Heaps/heaps.html)
 
 
 ## <h2 id = "summary">Summary</h2>
@@ -37,33 +49,33 @@ public void shiftUp(int pos){
     data[pos] = value;
 }
 ```
+- Time Complexity: O(log(n))
 #### Shift down(percolating down)
 - This operation is used to shift the value down to the right place
 ```java
-public void shiftDown(int pos){
-    int temp = data[pos];
-    int leftIndex = pos * 2;
-    int rightIndex = pos * 2 + 1;
-    int minIndex = leftIndex;
-    while(leftIndex <= size){
-        if(rightIndex <= size && data[rightIndex] < data[leftIndex]){
+private void shiftDown(int[] A, int pos){
+    int leftIndex = (pos + 1) * 2 - 1;
+    int rightIndex = leftIndex + 1;
+    int temp = A[pos];
+
+    while(leftIndex < size){
+        int minIndex = leftIndex;
+        if(rightIndex < size && A[leftIndex] > A[rightIndex]){
             minIndex = rightIndex;
-        } else {
-            minIndex = leftIndex;
         }
 
-        if(data[leftIndex] >= temp){
+        if(A[minIndex] >= temp){
             break;
+        } else {
+            swap(A, pos, minIndex);
+            pos = minIndex;
+            leftIndex = (minIndex + 1) * 2 - 1;
+            rightIndex = leftIndex + 1;
         }
-        data[pos] = data[minIndex];
-        leftIndex = 2 * minIndex;
-        rightIndex = leftIndex + 1;
-
     }
-    data[minIndex] = temp;
-
 }
 ```
+- Time Complexity: O(log(n))
 #### Insert
 1. The position and the size of the array should be checked. If the position is the end of the array then the array should be resized.
 2. Inserting the new value at the end of the heap then **percolating up**
@@ -80,7 +92,7 @@ public void push(int value){
 
 }
 ```
-- Time Complexity: O(log(N))
+- Time Complexity: O(log(n))
 #### Delete
 ##### Delete root(max/min)
 1. The max/min value is located at the index 1;
@@ -99,7 +111,7 @@ public int pop(){
 }
 
 ```
-- Time Complexity: O(log(N))
+- Time Complexity: O(log(n))
 ##### Delete other node
 ```java
 public int remove(index){
@@ -118,12 +130,34 @@ public int remove(index){
 
 }
 ```
-- Time Complexity: O(log(N))
+- Time Complexity: O(log(n))
 #### Replace
 #### Search
 - loop the array to find the value
 - Time complexity is O(N)
 #### Build heap
+```java
+public void buildHeap(int[] A){
+    for(int i = size/2; i>=0; i--){
+        shiftDown(A, i);
+    }
+}
+```
+- Time Complexity : O(n)
+- //TODO analysis
+#### Heap Sort
+- First make the array a max heap then
+```java
+public void heapSort(int[] A){
+    buildHeap(A);
+    for(int i = size - 1; i >= 0; i--){
+        swap(A, i, 0);
+        size--;
+        shiftDown(A, 0);
+    }
+}
+```
+- Time Complexity: O(nlog(n))
 
 ## <h2 id = "application">Application</h2>
 - Dynamically get the max/ min value no matter add or remove any values including the current max/ min value;
