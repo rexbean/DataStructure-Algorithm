@@ -2,6 +2,7 @@
 - [Summary](#summary)
 - [Basics](#basics)
   - [Definition and Property](#definition)
+  - [Representation](#representation)
   - [Operations](#operations)
     - [Shift Up](#shiftup)
     - [Shift Down](#shiftDown)
@@ -19,7 +20,7 @@
 ## <h2 id = "summary">Summary</h2>
 
 ## <h2 id = "basics">Basics</h2>
-### Definition and properties
+### <h3 id = "definition">Definition and properties</h3>
 - A binary heap is a complete binary tree, which satisfies the corresponding heap property.
 - Heap has two types:
   - Max heap: Each node should larger than or **equal to** its two children.
@@ -27,7 +28,7 @@
 - In heap, the root always hold the element with the highest priority(the min or the max).
 - Because the heap is a complete tree, so when there are N nodes, the height of the heap is log(N)
 ![](assets/markdown-img-paste-20190519094548184.png)
-### Implementation by array
+### <h3 id = "representation">Representation by array</h3>
 The heap can be represented by storing its level order traversal in an array
 ![](assets/markdown-img-paste-20190519095233569.png)
 #### Properties:
@@ -36,8 +37,8 @@ The heap can be represented by storing its level order traversal in an array
 - Left child stores in **Index 2 * k**
 - Right child stores in **Index 2 * k + 1**
 - Parent stores in **Index k/2**
-### Operations
-#### Shift up(percolating up)
+### <h3 id = "operations">Operations</h3>
+#### <h4 id = "shiftup">Shift up(percolating up)</h4>
 - This operation is used to shift the value up to the right place
 ```java
 public void shiftUp(int pos){
@@ -50,7 +51,7 @@ public void shiftUp(int pos){
 }
 ```
 - Time Complexity: O(log(n))
-#### Shift down(percolating down)
+#### <h4 id = "shiftdown">Shift down(percolating down)</h4>
 - This operation is used to shift the value down to the right place
 ```java
 private void shiftDown(int[] A, int pos){
@@ -76,7 +77,7 @@ private void shiftDown(int[] A, int pos){
 }
 ```
 - Time Complexity: O(log(n))
-#### Insert
+#### <h4 id = "push">Push</h4>
 1. The position and the size of the array should be checked. If the position is the end of the array then the array should be resized.
 2. Inserting the new value at the end of the heap then **percolating up**
 ```java
@@ -93,8 +94,8 @@ public void push(int value){
 }
 ```
 - Time Complexity: O(log(n))
-#### Delete
-##### Delete root(max/min)
+#### <h4 id= "remove">Remove</h4>
+##### <h5 id = "pop">Pop</h5>
 1. The max/min value is located at the index 1;
 2. To remove it, swap the root with the last node
 3. **percolating down** the root
@@ -112,7 +113,7 @@ public int pop(){
 
 ```
 - Time Complexity: O(log(n))
-##### Delete other node
+##### <h5 id= "removeOthers">Remove other node</h5>
 ```java
 public int remove(index){
    // this is for the min heap
@@ -131,11 +132,11 @@ public int remove(index){
 }
 ```
 - Time Complexity: O(log(n))
-#### Replace
-#### Search
+#### <h4 id = "replace">Replace</h4>
+#### <h4 id = "search">Search</h4>
 - loop the array to find the value
 - Time complexity is O(N)
-#### Build heap
+#### <h4 id= "buildHeap">Build heap</h4>
 ```java
 public void buildHeap(int[] A){
     for(int i = size/2; i>=0; i--){
@@ -145,7 +146,7 @@ public void buildHeap(int[] A){
 ```
 - Time Complexity : O(n)
 - //TODO analysis
-#### Heap Sort
+#### <h4 id = "heapSort">Heap Sort</h4>
 - First make the array a max heap then
 ```java
 public void heapSort(int[] A){
