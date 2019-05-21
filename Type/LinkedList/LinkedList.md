@@ -47,6 +47,7 @@
   - If two pointers point to the same node, they are not same!!
   - When a new node will be added then a **pre** node will be needed!
   - When modifing the structure of the linked list, do not forget to **let the last node points to null**
+  - When return the last node, using a **prev pointer!**. Using if(head.next == null) will be failed when there is only one node!
 ### <h3 id = "cornerCase">Corner Case</h3>
 - Linked List is empty;
 - Linked List only have one node
