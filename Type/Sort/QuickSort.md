@@ -4,6 +4,7 @@
 - [Piviot Selection](#pivotSelection)
 - [Analysis](#analysis)
 - [Optimizations](#optimizations)
+- [Quick Selection](#quickSelect)
 
 ## <div id = "definition">Definition</div>
 - Quick sort is same as the merge sort using Divide and Conquer.
@@ -161,4 +162,26 @@ private void dualPivotQuickSort(int[] A, int left, int right){
         dualPivotQuickSort(A, l, r);
         dualPivotQuickSort(A, r + 2, right);
     }
+```
+## <h2 id = "quickSelect">Quick Selection</h2>
+Using `partition` algorithm of the quick sort can select the k-th element in the collection
+```java
+public int quickSelect(int[] nums, int k){
+    if(nums == null || nums.length == 0){
+        return -1;
+    }
+
+    int left = 0;
+    int right = nums.length - 1;
+    while(left <= right){
+        int index = partition(nums, left, right);
+        if(index < k){
+            index = partition(nums, index + 1, right);
+        } else if(index > k){
+            index = partition(nums, left, index - 1);
+        } else {
+            return nums[index];
+        }
+    }
+}
 ```

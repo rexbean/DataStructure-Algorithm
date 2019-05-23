@@ -17,29 +17,11 @@
 
 
 
-| #   | # of Prob | Status    | Type              | Note                                                                         |
-| --- | --------- | --------- | ----------------- | ---------------------------------------------------------------------------- |
-| 1   | 104       | Completed | BFS               | BFS can get the depth                                                        |
-| 2   | 226       | Completed | Top-Down          |                                                                              |
-| 3   | 617       | Completed | like<br>Bottom-Up |                                                                              |
-| 4   | 100       | Completed | Bottom-Up         |                                                                              |
-| 5   | 110       | Completed | Bottom-Up         |                                                                              |
-| 6   | 108       | Completed | Top-Down          | `if(left > right) return null;`<br> `mid + 1 => right`<br> `left => mid - 1` |
-| 7   | 235       | Completed | LCA with BST      |                                                                              |
-| 8   | 669       | Completed | Bottom-Up         | `if(L<=root.val<=R) root.left = left;root.right =right;`                     |
-| 9   | 101       | Completed | Bottom-Up         |                                                                              |
-| 10  | 654       | Completed | Top-Down          | `if(left > right) return null;`<br> `mid + 1 => right`<br> `left => mid - 1` |
-| 11  | 236       | Completed | LCA               |                                                                              |
-| 12  | 105       | Completed | Pre + In =>Tree   | Mengbi                                                                             |
-
-
-<h2 id = "concept">Concept</h2>
-
+## <h2 id = "concept">Concept</h2>
 - [Tree](#tree)
 - [Binary Tree](#binaryTree)
 - [Binary Search Tree](#bst)
-<h3 id = "tree">Tree</h3>
-
+### <h3 id = "tree">Tree</h3>
   - **What is a Tree**
 
     Tree is a non-linear data structure, which organizes data hieractically. Data are stored in **Nodes**,and nodes are connected by **Edges**.
@@ -68,28 +50,84 @@
   - **Property**
     1. **One Root**: Tree has only one root
     2. **No Ring**: It does not have any ring!!!
-<h3 id = "binaryTree">Binary Tree</h3>
-
-  - **What is a Binary Tree**
+### <h3 id = "binaryTree">Binary Tree</h3>
+#### Definition
   Binary tree is a tree that the number of any node's children is at most 2.
-
-  - **Property**
-    1. The number of node on level i is maximum: **2^(i - 1)(i >= 1)**
-    2. The binary tree whose height is k has at most **2^k - 1 nodes.**
-    3. N nodes can build a binary tree whose height is at least **lgn+1**
-    4. n0 represents the number of nodes which has no children.
-    <br>n2 represents the number of nodes which has 2 children.
-    <br>**no = n2 + 1**;
-  - **Full Binary Tree**
-    - A tree whose whose all nodes have 2 children.
-    - If it's height is h, and the number of nodes are **2^h - 1**;
+#### Property
+  1. The number of node on level i is maximum: **2^(i - 1)(i >= 1)**
+  2. The binary tree whose height is k has at most **2^k - 1 nodes.**
+  3. N nodes can build a binary tree whose height is at least **lgn+1**
+  4. n0 represents the number of nodes which has no children.
+  <br>n2 represents the number of nodes which has 2 children.
+  <br>**no = n2 + 1**;
+#### Special Binary Tree
+- **Full Binary Tree**
+  - A tree whose whose all nodes have 2 children.
+  - If it's height is h, and the number of nodes are **2^h - 1**;
 ![Full_Binary_Tree](assets/markdown-img-paste-20180906160359186.png)
-    - [Judge a full binary tree](#judgeFullBT)
+  - [Judge a full binary tree](#judgeFullBT)
+- **Complete Binary Tree**
+  - A tree whose each level must be all filled, except the last level. The nodes are as far left as possible.
+  ![Complete_Binary_Tree](assets/markdown-img-paste-20180906161804893.png)
+  - Full binary tree is a special complete binary tree.
+  - [Judge a complete binary Tree](#judgeCompleteBT)
+#### Traversal
+##### Inorder Traversal
+- Recursion
+```java
+public void inorder(TreeNode root){
+    if(root == null){
+        return;
+    }
 
-  - **Complete Binary Tree**
-    - A tree whose each level must be all filled, except the last level. The nodes are as far left as possible.
-    ![Complete_Binary_Tree](assets/markdown-img-paste-20180906161804893.png)
+    inorder(root.left);
+    System.out.println(root.val);
+    inorder(root.right);
+}
+```
+- Stack
+``` java
+public void inorder(TreeNode root){
+    if(root == null){
+        return;
+    }
 
-    - Full binary tree is a special complete binary tree.
-    - [Judge a complete binary Tree](#judgeCompleteBT)
-<h3 id = "bst"><a href = "https://github.com/rexbean/L/blob/master/Type/Tree/BST.md">Binary Search Tree</a></h3>
+    Deque<TreeNode> stack = new ArrayDeque<>();
+    while(root != null){
+        stack.push(root);
+        root = root.left;
+    }
+    while(!stack.isEmpty()){
+        TreeNode r = stack.pop();
+        result.add(r.val);
+        if(r.right != null){
+            r = r.right;
+            while(r != null){
+                stack.push(r);
+                r = r.left;
+            }
+        }
+    }
+    return result;
+}
+```
+
+### <h3 id = "bst"><a href = "https://github.com/rexbean/L/blob/master/Type/Tree/BST.md">Binary Search Tree</a></h3>
+
+
+
+
+| #   | # of Prob | Status    | Type              | Note                                                                         |
+| --- | --------- | --------- | ----------------- | ---------------------------------------------------------------------------- |
+| 1   | 104       | Completed | BFS               | BFS can get the depth                                                        |
+| 2   | 226       | Completed | Top-Down          |                                                                              |
+| 3   | 617       | Completed | like<br>Bottom-Up |                                                                              |
+| 4   | 100       | Completed | Bottom-Up         |                                                                              |
+| 5   | 110       | Completed | Bottom-Up         |                                                                              |
+| 6   | 108       | Completed | Top-Down          | `if(left > right) return null;`<br> `mid + 1 => right`<br> `left => mid - 1` |
+| 7   | 235       | Completed | LCA with BST      |                                                                              |
+| 8   | 669       | Completed | Bottom-Up         | `if(L<=root.val<=R) root.left = left;root.right =right;`                     |
+| 9   | 101       | Completed | Bottom-Up         |                                                                              |
+| 10  | 654       | Completed | Top-Down          | `if(left > right) return null;`<br> `mid + 1 => right`<br> `left => mid - 1` |
+| 11  | 236       | Completed | LCA               |                                                                              |
+| 12  | 105       | Completed | Pre + In =>Tree   | Mengbi                                                                             |
