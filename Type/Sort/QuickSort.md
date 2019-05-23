@@ -176,9 +176,9 @@ public int quickSelect(int[] nums, int k){
     while(left <= right){
         int index = partition(nums, left, right);
         if(index < k){
-            index = partition(nums, index + 1, right);
+            left = index + 1;
         } else if(index > k){
-            index = partition(nums, left, index - 1);
+            right = index - 1;
         } else {
             return nums[index];
         }
