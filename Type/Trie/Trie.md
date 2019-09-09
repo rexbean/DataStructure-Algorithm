@@ -1,21 +1,20 @@
 # Trie
 - Summary
-- Definition
-  - Node
-- Operations
-  - Insert
-  - Search
-  - Delete
-- Reference:
+- [Definition](#summary)
+  - [Node](#node)
+- [Operations](#operations)
+  - [Insertion](#insertion)
+  - [Search](#search)
+  - [Delete](#delete)
 
 ## Summary
 
-## Definition
+## <div id = "definition">Definition</div>
 Trie is a tree-like data structure, each node will store a letter of an alphabet. By structuring like a tree, we can retrieve a string/ word/ value by traversing down a branch path of the tree. Like the trie below. **see, pain, pand, dog** has been inserted into the tire.
 
 ![](assets/markdown-img-paste-20190908103022151.png)
 
-### Node
+### <div id="node">Node</id>
 For each node, we can get value of the node/ check whether it is a word or not or find the all way down.
 
 So the we should define a Node class like below:
@@ -32,8 +31,8 @@ private class Node {
 ```
 Every trie has a empty Node as the root.
 
-## Operations
-### Insert
+## <div id = "operations">Operations</div>
+### <div id = "insertion">Insertion</div>
 From the root, each character in the key will be sequentially picked out and inserted into the trie until the last character. Then the value will be inserted into the leaf.
 ``` java
 public boolean insert(String key, T value) {
@@ -58,7 +57,7 @@ private boolean insertHelper(Node root, String key, int index, T value) {
     return insertHelper(root.next.get(c), key, index + 1, value);
 }
 ```
-### Search
+### <div id = "search">Search</div>
 From the root, each character in the key will be sequentially picked out to get the next node. If there is no node, return null, otherwise return value.
 ``` java
 public T search(String key) {
@@ -77,7 +76,7 @@ private T searchHelper(Node root, String key, int index) {
     return searchHelper(root.next.get(c), key, index + 1);
 }
 ```
-### Delete
+### <div id ="delete">Delete</div>
 Find the key first, if the key does not exists then return. If the key exists, then find the position first. Remove the value from the node, if the node does not have any children then return null;
 ``` java
 public void delete(String key) {
