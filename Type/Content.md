@@ -8,12 +8,14 @@
   - [Heap](https://github.com/rexbean/L/blob/master/Type/Heap.md)
   - [Tree](https://github.com/rexbean/L/blob/master/Type/Tree/Tree.md)
     - [Binary Search Tree](https://github.com/rexbean/L/blob/master/Type/Tree/BST.md)
+    - [Segment Tree](https://github.com/rexbean/L/blob/master/Type/Tree/SegmentTree.md)
   - [Graph](https://github.com/rexbean/L/blob/master/Type/Graph/Graph.md)
     - BFS
     - DFS
     - [Topological Sort](https://github.com/rexbean/L/blob/master/Type/Graph/TopologicalSort.md)
     - [Union Find](https://github.com/rexbean/L/blob/master/Type/Graph/UnionFind.md)
   - [HashMap](https://github.com/rexbean/L/blob/master/Type/HashMap/HashMap.md)
+  - [Trie](https://github.com/rexbean/L/blob/master/Type/Trie/Trie.md)
 - Algorithms
   - [Sliding Window](https://github.com/rexbean/L/blob/master/Type/HashMap/SlidingWindow.md)
   - [Dynamic Programming](https://github.com/rexbean/L/blob/master/Type/DP.md)
