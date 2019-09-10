@@ -5,6 +5,7 @@
   - [Create](#create)
   - [Update](#update)
   - [Query](#query)
+- [Analyze](#analyze)
 
 ## <div id = "definition">Definition</div>
 We can use a real tree and the definition of the tree node is:
@@ -206,3 +207,7 @@ private int queryHelper(int index,
     return result;
 }
 ```
+### <div id = "analyze">Analyze</div>
+- The Time Complexity of Create Tree is O(n)
+- The Time Complexity of Range Sum is O(lgn)
+- The Time Complexity of Update Value is O(lgn)
