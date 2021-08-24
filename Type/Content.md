@@ -1,7 +1,7 @@
 # Content
 - Basic Data Structures
   - [String](https://github.com/rexbean/L/blob/master/Type/String.md)
-  - [Array](https://github.com/rexbean/L/blob/master/Type/LinkedList/Array.md)
+  - [Array](https://github.com/rexbean/L/blob/master/Type/Array.md)
   - [Linked List](https://github.com/rexbean/L/blob/master/Type/LinkedList/LinkedList.md)
   - [Stack](https://github.com/rexbean/L/blob/master/Type/Stack.md)
   - [Queue]
